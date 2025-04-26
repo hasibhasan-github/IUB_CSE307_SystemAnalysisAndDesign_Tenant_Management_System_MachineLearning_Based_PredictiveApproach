@@ -71,8 +71,6 @@
               <div class="right">
                 <div class="info">
                     <h3>Profile Information</h3>
-                    <h2 style="text-align: center;">User Information Form</h2>
-                </br>
                 <form>
                     <div class="info_data">
                          <div class="data">
@@ -88,24 +86,52 @@
                          <div class="data">
                          </br>
                             <h4>Gender</h4>
-                            <p>Male</p>
+                            <select class="form-select" id="gender" required>
+                              <option value="" selected disabled>Choose gender</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Other">Other</option>
+                          </select>
                          </div>
+                        </br>
                          <div class="data">
-                          <h4>Subscription Type</h4>
-                            <p>{{ s_table_instance.supplierType }}</p>
+                        </br>
+                        <label for="email" class="form-label"><h4>Email</h4></label>
+                          <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
                       </div>
                     </div>
                     <div class="info_data">
                          <div class="data">
+                        </br>
                             <h4>Contact Number</h4>
-                            <p>{{ s_table_instance.contactnumber }}</p>
+                            <input type="tel" class="form-control" id="contactNo" placeholder="Enter your contact number" required>
                          </div>
                          <div class="data">
-                          <h4>Address</h4>
-                          <p>{{ s_table_instance.house }}, {{ s_table_instance.street }}, {{ s_table_instance.thana }}, {{ s_table_instance.zip }} {{ s_table_instance.city }}</p>
+                        </br>
+                          <h4>Date of Birth</h4>
+                          <input type="date" class="form-control" id="dob" required>
                       </div>
                     </div>
+                    <div class="info_data">
+                      <div class="data">
+                      </br>
+                         <h4>User Type</h4>
+                         <select class="form-select" id="gender" required>
+                           <option value="" selected disabled>Choose Type</option>
+                           <option value="Male">Tenant</option>
+                           <option value="Female">Landlord</option>
+                       </select>
+                      </div>
+                     </br>
+                      <div class="data">
+                     </br>
+                     <label for="email" class="form-label"><h4>Address</h4></label>
+                       <input type="email" class="form-control" id="email" placeholder="Enter your Address" required>
+                   </div>
+                 </div>
                 </div>
+                
+
               </form>
             
 
