@@ -64,7 +64,60 @@
                 {% endblock %}
               <i class="fas fa-user-cog"></i>
             </div> -->
-            
+            <div class="course-box">
+          
+              <div class="wrapper">
+              <div class="right">
+                <div class="info">
+                    <h3>Lease Agreement Form</h3>
+                    <form>
+                    <div class="info_data">
+                         <div class="data">
+                            <h4>Tenant Name:</h4>
+                            <input type="text" class="form-control" id="tenantName" placeholder="Enter tenant's full name" required>
+                         </div>
+                         <div class="data">
+                           <h4>Tenant Email</h4>
+                           <input type="email" class="form-control" id="tenantEmail" placeholder="Enter tenant's email address" required>
+                      </div>
+                    </div>
+                    <div class="info_data">
+                         <div class="data">
+                            <h4>Gender</h4>
+                            <p>Male</p>
+                         </div>
+                         <div class="data">
+                          <h4>Subscription Type</h4>
+                            <p>{{ s_table_instance.supplierType }}</p>
+                      </div>
+                    </div>
+                    <div class="info_data">
+                         <div class="data">
+                            <h4>Contact Number</h4>
+                            <p>{{ s_table_instance.contactnumber }}</p>
+                         </div>
+                         <div class="data">
+                          <h4>Address</h4>
+                          <p>{{ s_table_instance.house }}, {{ s_table_instance.street }}, {{ s_table_instance.thana }}, {{ s_table_instance.zip }} {{ s_table_instance.city }}</p>
+                      </div>
+                    </div>
+                </div>
+              
+              <div class="projects">
+                    <h3>Profile Status</h3>
+                    <div class="projects_data">
+                         <div class="data">
+                            <h4>Information Status</h4>
+                            <p>{{ prodname }}</p>
+                         </div>
+                         <div class="data">
+                           <h4>Rating</h4>
+                            <p>{{ LastOrder }}</p>
+                      </div>
+                    </div>
+                </div>
+              </div>           
+            </div>
 
             <!-- Profile  -->
             <!-- {% block Profile %}
