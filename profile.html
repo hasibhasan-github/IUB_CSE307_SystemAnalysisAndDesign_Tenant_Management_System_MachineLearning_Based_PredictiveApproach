@@ -1,25 +1,3 @@
-{% extends 'SupplierDashboardBase.html' %}
-
-{% block contentHome %}
-<li><a href="{% url 'testserver:test' %}">
-  <i class="fas fa-home"></i>
-  <span class="nav-item">Home</span>
-</a></li>
-{% endblock %}
-
-
-{% block contentProduct %}
-  <li><a href="{% url 'testserver:productlist' %}">
-    <i class="fas fa-wallet"></i>
-    <span class="nav-item">Products</span>
-  </a></li>  
-{% endblock %}
-
-{% block contentDashHead %}
-  <h1>PROFILE</h1>
-{% endblock %}
-
-{% block Profile %}
 <div class="course-box">
           
   <div class="wrapper">
@@ -80,15 +58,4 @@
 </section> -->
 
 </div>
-{% endblock %}
 
-{% block contentButton %}
-  <!-- <p>Supplier ID: {{ s_table_instance.supplierID }}</p> -->
-  <!-- <h2> Welcome Back {{ s_table_instance.fname }} {{ s_table_instance.lname }} </h2> -->
-{% endblock %}
-
-
-{% block contentDash %}
-{{ s_table_instance.fname }} {{ s_table_instance.lname }} 
-
-{% endblock %}
