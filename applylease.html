@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lease Agreement Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .signature-area {
+            border-top: 1px solid #ddd;
+            padding-top: 30px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center">Lease Agreement Form</h2>
+    <form action="#" method="POST">
+        <!-- Tenant Information -->
+        <div class="form-group">
+            <label for="tenantName">Tenant Name:</label>
+            <input type="text" class="form-control" id="tenantName" placeholder="Enter tenant's full name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tenantEmail">Tenant Email:</label>
+            <input type="email" class="form-control" id="tenantEmail" placeholder="Enter tenant's email address" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tenantPhone">Tenant Phone Number:</label>
+            <input type="text" class="form-control" id="tenantPhone" placeholder="Enter tenant's phone number" required>
+        </div>
+
+        <!-- Landlord Information -->
+        <div class="form-group">
+            <label for="landlordName">Landlord Name:</label>
+            <input type="text" class="form-control" id="landlordName" placeholder="Enter landlord's full name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="landlordEmail">Landlord Email:</label>
+            <input type="email" class="form-control" id="landlordEmail" placeholder="Enter landlord's email address" required>
+        </div>
+
+        <div class="form-group">
+            <label for="landlordPhone">Landlord Phone Number:</label>
+            <input type="text" class="form-control" id="landlordPhone" placeholder="Enter landlord's phone number" required>
+        </div>
+
+        <!-- Lease Terms -->
+        <div class="form-group">
+            <label for="leaseStartDate">Lease Start Date:</label>
+            <input type="date" class="form-control" id="leaseStartDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="leaseEndDate">Lease End Date:</label>
+            <input type="date" class="form-control" id="leaseEndDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="monthlyRent">Monthly Rent:</label>
+            <input type="number" class="form-control" id="monthlyRent" placeholder="Enter the monthly rent amount" required>
+        </div>
+
+        <div class="form-group">
+            <label for="securityDeposit">Security Deposit:</label>
+            <input type="number" class="form-control" id="securityDeposit" placeholder="Enter the security deposit amount" required>
+        </div>
+
+        <div class="form-group">
+            <label for="paymentMethod">Payment Method:</label>
+            <select class="form-control" id="paymentMethod" required>
+                <option>Bank Transfer</option>
+                <option>Cash</option>
+                <option>Check</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="leaseConditions">Special Lease Conditions:</label>
+            <textarea class="form-control" id="leaseConditions" rows="4" placeholder="Enter any special conditions here..."></textarea>
+        </div>
+
+        <!-- Signature Section -->
+        <div class="signature-area">
+            <h4>Tenant's Signature</h4>
+            <div class="form-group">
+                <label for="tenantSignature">Sign Here:</label>
+                <input type="text" class="form-control" id="tenantSignature" placeholder="Tenant's signature" required>
+            </div>
+            <p>Date: <input type="date" class="form-control" id="tenantSignatureDate" required></p>
+            
+            <hr>
+            
+            <h4>Landlord's Signature</h4>
+            <div class="form-group">
+                <label for="landlordSignature">Sign Here:</label>
+                <input type="text" class="form-control" id="landlordSignature" placeholder="Landlord's signature" required>
+            </div>
+            <p>Date: <input type="date" class="form-control" id="landlordSignatureDate" required></p>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-4">Submit Agreement</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
