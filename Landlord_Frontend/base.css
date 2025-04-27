@@ -21,7 +21,7 @@ nav{
   bottom: 0;
   height: 100vh;
   left: 0;
-  background: #fff;
+  background: #e8daef ;
   width: 280px;
   overflow: hidden;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
@@ -134,7 +134,7 @@ a:hover{
     height: 500px;
     padding: 10px 10px 30px 10px;
     margin-top: 10px;
-    background: #fff;
+    background: #e8f6f3 ;
     border-radius: 10px;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
   }
