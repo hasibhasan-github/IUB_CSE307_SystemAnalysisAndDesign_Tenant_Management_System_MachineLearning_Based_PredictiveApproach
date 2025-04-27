@@ -73,29 +73,29 @@
               <div class="table-cell">
                   <p>Product Price</p>
               </div>
-              <div class="table-cell last-cell">
+              <div class="table-cell ">
                   <p>Update Details</p>
               </div> 
               <div class="table-cell last-cell">
                   <p>Delete Product</p>
               </div> 
           </div>
-  
-  
+
           <div class="table-row">
-              <div class="table-cell first-cell">
-                  <p>Business Website Tutorial</p>
-              </div>
-              <div class="table-cell">
-                  <p>999</p>
-              </div>
-              <div class="table-cell last-cell">
-                  <a href="">Watch Now</a>
-              </div>   
-              <div class="table-cell last-cell">
-                  <a href="">Watch Now</a>
-              </div>   
-          </div>
+            <div class="table-cell first-cell">
+                <p>abc</p>
+            </div>
+            <div class="table-cell">
+                <p>Xyz</p>
+            </div>
+            <div class="table-cell ">
+                <a href="{% url 'testserver:productupdate' products.productID %}"> Update </a>
+                <!-- <p>Update Details </p> -->
+            </div> 
+            <div class="table-cell last-cell">
+                <a href="{% url 'testserver:productdelete' products.productID %}"> Delete </a>
+            </div> 
+        </div>
   
         
         <!-- <div class="main-skills">
