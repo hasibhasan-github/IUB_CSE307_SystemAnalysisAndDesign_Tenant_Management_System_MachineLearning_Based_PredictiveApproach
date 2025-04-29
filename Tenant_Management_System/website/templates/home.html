@@ -5,7 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tenant Management System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Set background image */
+        body {
+            background-image: url('Login.jpg'); /* Set your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            position: relative;
+        }
 
+        h5 {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            font-size: 3rem;
+            color: #f2f3f4;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #1e3c72, #2a5298); /* Blue Gradient */
+            -webkit-background-clip: text;
+            background-clip: text;
+            margin-bottom: 30px;
+        }
+
+        /* Elegant Blue Gradient Design for Heading */
+        .main-heading {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #1e3c72, #2a5298); /* Blue Gradient */
+            -webkit-background-clip: text;
+            background-clip: text;
+            margin-bottom: 30px;
+        }
+
+        /* Call-to-action button styling */
+        .cta-button {
+            font-size: 1.25rem;
+            font-weight: bold;
+            padding: 15px 30px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Top right corner buttons */
+        .auth-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .auth-buttons a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .auth-buttons a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Slider Section */
+        .carousel-inner img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Footer Styling */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 0.875rem;
+        }
+
+    </style>
 </head>
 <body>
     <!-- Top Auth Buttons: Login and Signup -->
