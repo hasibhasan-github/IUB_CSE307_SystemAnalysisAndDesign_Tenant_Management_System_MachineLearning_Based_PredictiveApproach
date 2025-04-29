@@ -19,7 +19,7 @@
           <nav>
             <ul>
               <li><a href="#" class="logo">
-                <img src="tenant.jpg" alt="">
+                <img src="{{ url_for('static', filename='tenant.jpg') }}" alt="">
                 <span class="nav-item">Tenant</span>
               </a></li>
               <!-- {% block contentHome %}
@@ -35,6 +35,10 @@
               <li><a href="">
                 <i class="fas fa-info-circle"></i>
                 <span class="nav-item">Information</span>
+              </a></li>
+              <li><a href="">
+                <i class="fas fa-bell"></i>
+                <span class="nav-item">Notifications</span>
               </a></li>
               <li><a href="">
                 <i class="fas fa-tasks"></i>
