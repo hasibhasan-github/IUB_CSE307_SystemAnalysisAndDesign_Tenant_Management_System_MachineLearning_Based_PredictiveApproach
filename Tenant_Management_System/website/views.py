@@ -1,4 +1,4 @@
 from flask import Blueprint
 
-views = Blueprint('views')
+views = Blueprint('views', __name__)
 
