@@ -13,6 +13,7 @@
             background-position: center;
             background-repeat: no-repeat;
             height: 100vh;
+            position: relative;
         }
 
         /* Elegant Blue Gradient Design for Heading */
@@ -28,9 +29,22 @@
             background-clip: text;
             margin-bottom: 30px;
         }
+
+        /* Home Button in Upper Right Corner */
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
     </style>
 </head>
 <body>
+    <!-- Home Button in the Upper Right Corner -->
+    <div class="home-btn">
+        <a href="home" class="btn btn-secondary"> X </a>
+    </div>
+
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh; flex-direction: column; background: rgba(0, 0, 0, 0.5);">
         <!-- Blue Gradient Heading -->
         <h1 class="text-center">Tenant Management System</h1>
@@ -48,11 +62,6 @@
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Login</button>
             </form>
-
-            <!-- Link to Home Page -->
-            <div class="text-center mt-3">
-                <a href="index.html" class="btn btn-secondary w-100">Home</a>
-            </div>
 
             <!-- Sign Up Link -->
             <div class="text-center mt-3">
