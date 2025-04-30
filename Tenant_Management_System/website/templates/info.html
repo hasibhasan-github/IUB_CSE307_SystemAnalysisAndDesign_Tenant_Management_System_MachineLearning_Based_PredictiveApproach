@@ -77,8 +77,17 @@ Information
          </br>
          <label for="email" class="form-label"><h4>Address</h4></label>
            <input type="text" class="form-control" id="add" name="add" placeholder="Enter your Address"  required>
-           <input type="text" class="form-control" id="verify" name="verify" value="Not Verified" readonly required>
        </div>
+       <div class="data">
+      </br>
+      <label for="verify" class="form-label"><h4>Verification Status</h4></label>
+      <input type="text" class="form-control" id="verify" name="verify" value="Not Verified" readonly required>
+    </div>
+    <div class="info-data">
+    </br>
+    <label for="id" class="form-label"><h4>User ID</h4></label>
+    <input type="text" class="form-control" id="id" name="id" value="{{ user.id }}" readonly required>
+  </div>
 
      </div>
     </div>
