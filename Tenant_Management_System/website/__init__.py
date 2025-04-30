@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 import pymysql  # Only needed if using PyMySQL for MySQL connection
+from flask_login import LoginManager
 
 db = SQLAlchemy()
 
