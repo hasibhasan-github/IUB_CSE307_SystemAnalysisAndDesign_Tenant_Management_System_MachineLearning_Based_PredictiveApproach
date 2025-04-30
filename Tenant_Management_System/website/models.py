@@ -9,3 +9,59 @@ class User(db.Model, UserMixin):
     gender = db.Coloumn(db.String(10))
     contactNumber = db.Coloumn(db.String(11),  nullable=False)
     userType = db.Coloumn(db.String(10))
+
+
+
+class Verification(db.Model):
+    nid_number = db.Column(db.String(20), primary_key=True, unique=True, nullable=False)  # NID as Primary Key
+    name = db.Column(db.String(100), nullable=False)
+    gender = db.Column(db.String(10), nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    contact_number = db.Column(db.String(15), nullable=False)
+    dob = db.Column(db.Date, nullable=False)  # Store date of birth as a date field
+    user_type = db.Column(db.String(10), nullable=False)
+    address = db.Column(db.String(200), nullable=False)
+    verification_status = db.Column(db.String(20), default='Not Verified', nullable=False)
+
+
+    # Reference to User (foreign key)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+    # Define the relationship between Verification and User
+    user = db.relationship('User', backref=db.backref('verifications', lazy=True))
+
+
+class LeaseAgreement(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    
+    # Tenant Details
+    tenant_name = db.Column(db.String(100), nullable=False)
+    tenant_email = db.Column(db.String(120), unique=True, nullable=False)
+    tenant_phone_number = db.Column(db.String(15), nullable=False)
+    
+    # Landlord Details
+    landlord_name = db.Column(db.String(100), nullable=False)
+    landlord_email = db.Column(db.String(120), unique=True, nullable=False)
+    landlord_phone_number = db.Column(db.String(15), nullable=False)
+    
+    # Lease Details
+    monthly_rent = db.Column(db.Float, nullable=False)
+    security_deposit = db.Column(db.Float, nullable=False)
+    lease_start_date = db.Column(db.Date, nullable=False)  # Store date as date type
+    lease_end_date = db.Column(db.Date, nullable=False)  # Store date as date type
+
+
+class MaintenanceRequest(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    
+    # Tenant Information
+    tenant_name = db.Column(db.String(100), nullable=False)
+    tenant_email = db.Column(db.String(120), nullable=False)
+    tenant_phone = db.Column(db.String(15), nullable=False)
+    
+    # Maintenance Service Details
+    issue_type = db.Column(db.String(50), nullable=False)
+    issue_description = db.Column(db.Text, nullable=False)
+    preferred_time = db.Column(db.DateTime, nullable=False)
+    access_instructions = db.Column(db.Text, nullable=True)
+
