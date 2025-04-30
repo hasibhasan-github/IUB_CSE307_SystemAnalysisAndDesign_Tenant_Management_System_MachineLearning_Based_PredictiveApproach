@@ -94,13 +94,7 @@ Information
              <div class="data">
             </br>
               <h4>Date of Birth</h4>
-              <input type="date" class="form-control" id="dob" name="dob"
-              {% if ver %}
-              placeholder= "{{ ver.dob }}"
-            {% else %}
-                placeholder= "Enter Your NID Number"
-            {% endif %} 
-             required>
+              <input type="date" class="form-control" id="dob" name="dob" required>
           </div>
         </div>
         <div class="info_data">
@@ -117,7 +111,12 @@ Information
           <div class="data">
          </br>
          <label for="add" class="form-label"><h4>Address</h4></label>
-           <input type="text" class="form-control" id="add" name="add" placeholder="Enter your Address" >
+           <input type="text" class="form-control" id="add" name="add" 
+           {% if ver %}
+              placeholder= " {{ ver.address }}"
+            {% else %}
+              placeholder= "Enter Your Addressr"
+          {% endif %} >
        </div>
 
 
