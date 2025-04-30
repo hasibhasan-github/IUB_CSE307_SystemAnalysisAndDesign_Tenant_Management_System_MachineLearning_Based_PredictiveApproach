@@ -27,7 +27,6 @@ def create_app():
 
 def create_database(app):
     if not path.exists('website/' + DB_NAME):
-        with app.app_context():
-            db.create_all()
+        with app.app_context():  # Ensure we're inside the app context
+            db.create_all()  # This will create all the tables defined in your models
             print("Database created")
-

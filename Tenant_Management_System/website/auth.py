@@ -1,4 +1,7 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request, flash, redirect, url_for
+from . import db
+
+from .models import User
 
 auth = Blueprint('auth', __name__)
 
@@ -38,7 +41,16 @@ def signup():
             flash('contactNumber must be greater than 10 characters', category='error')
         else:
             # Add User to Database
+            new_user = User(
+                email=email,        # Replace with the user's email
+                password=password,          # Replace with a hashed password
+                username=username,              # Replace with the user's username
+                gender=gender,                       # Replace with gender
+                contactNumber=contactNumber,         # Replace with the user's contact number
+                userType=userType)                 # Replace with the user's type (e.g., "Tenant", "Admin"
+            db.session.add(new_user)
+            db.session.commit()
             flash('Registration Successful', category='success')
-            pass
+            return redirect(url_for('views.profile'))
 
     return render_template("signup.html")
