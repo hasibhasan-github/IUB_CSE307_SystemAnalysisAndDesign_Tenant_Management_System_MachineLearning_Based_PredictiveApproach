@@ -73,3 +73,30 @@ class Rent(db.Model):
 
     tenant = db.relationship('User', backref=db.backref('rent', lazy=True))
 
+
+
+
+class Property(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    
+    # Property Information
+    property_name = db.Column(db.String(100), nullable=False)
+    property_description = db.Column(db.Text, nullable=False)
+    property_location = db.Column(db.String(200), nullable=False)
+    property_rent = db.Column(db.Float, nullable=False)
+    property_type = db.Column(db.String(50), nullable=False)
+    bedrooms = db.Column(db.Integer, nullable=False)
+    bathrooms = db.Column(db.Integer, nullable=False)
+    property_size = db.Column(db.Integer, nullable=False)  # Size in sq. ft.  # Image URL or file path
+
+    # Property Availability and Lease Terms
+    available_from = db.Column(db.Date, nullable=False)
+    lease_terms = db.Column(db.Text, nullable=False)
+
+class ServiceProvider(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    phone = db.Column(db.String(15), nullable=False)
+
+    
