@@ -33,10 +33,11 @@ def signup():
             flash('Password must be greater than 8 characters', category='error')
         elif len(confirmPassword) < 7:
             flash('ConfirmPassword must be greater than 8 characters', category='error')
-        elif len(contactNumber) <= 11:
+        elif len(contactNumber) <= 10:
             flash('contactNumber must be greater than 10 characters', category='error')
         else:
             # Add User to Database
+            flash('Registration Successful', category='success')
             pass
 
     return render_template("signup.html")
