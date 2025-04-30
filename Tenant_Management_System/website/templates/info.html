@@ -22,22 +22,22 @@ Information
   <div class="right">
     <div class="info">
         <h3>Add Information</h3>
-    <form>
+    <form method="POST">
         <div class="info_data">
              <div class="data">
                 <h4>NID Number</h4>
-                <input type="text" class="form-control" id="id" placeholder="Enter your NID">
+                <input type="text" class="form-control" id="NId" name="NId" placeholder="Enter your NID">
              </div>
              <div class="data">
                <h4>Your Name</h4>
-               <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+               <input type="text" class="form-control" id="name" name="name" value="{{ user.username }}" required>
           </div>
         </div>
         <div class="info_data">
              <div class="data">
              </br>
                 <h4>Gender</h4>
-                <select class="form-select" id="gender" required>
+                <select class="form-select" id="gender" name="gender" required>
                   <option value="" selected disabled>Choose gender</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
