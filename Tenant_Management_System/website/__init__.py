@@ -15,7 +15,7 @@ def create_app():
     from .views import views
     from .auth import auth
 
-    from .models 
+    from .models import User, Verification, LeaseAgreement, MaintenanceRequest, Rent, Property, ServiceProvider, ServiceBill, Notification
 
     create_database()
 
