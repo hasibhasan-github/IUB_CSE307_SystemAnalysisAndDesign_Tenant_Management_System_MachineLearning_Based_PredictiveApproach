@@ -31,3 +31,7 @@ def report():
 @views.route('/noti')
 def noti():
     return render_template("noti.html")
+
+@views.route('/service')
+def service():
+    return render_template("service.html")
