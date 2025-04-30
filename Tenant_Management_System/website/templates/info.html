@@ -57,11 +57,11 @@ Information
              <div class="data">
                 <h4>NID Number</h4>
                 <input type="text" class="form-control" id="NId" name="NId" 
-                placeholder="{% if ver %}
-                  {{ ver.nid_number }}
+                {% if ver %}
+                  placeholder= "NID Number: {{ ver.nid_number }}"
                 {% else %}
-                    No verification record found
-                {% endif %}" >
+                    placeholder= "Enter Your NID Number"
+                {% endif %} >
              </div>
              <div class="data">
                <h4>Your Name</h4>
