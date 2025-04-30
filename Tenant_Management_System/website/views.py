@@ -39,7 +39,7 @@ def info():
         dob = request.form.get("dob")
         user_type = request.form.get("usertype")
         address = request.form.get("add")
-        verification_status = request.form.get("verify")
+        verification_status = "Pending"
         user_id = request.form.get("id")
     
         new_verification = Verification(
