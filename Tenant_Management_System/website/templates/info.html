@@ -38,24 +38,23 @@ Information
              </br>
                 <h4>Gender</h4>
                 <select class="form-select" id="gender" name="gender" required>
-                  <option value="" selected disabled>Choose gender</option>
+                  <option value="{{ user.gender }}" selected disabled>{{ user.gender }}</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
-                  <option value="Other">Other</option>
               </select>
              </div>
             </br>
              <div class="data">
             </br>
             <label for="email" class="form-label"><h4>Email</h4></label>
-              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+              <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" required>
           </div>
         </div>
         <div class="info_data">
              <div class="data">
             </br>
                 <h4>Contact Number</h4>
-                <input type="tel" class="form-control" id="contactNo" value = "{{ user.contactNumber }}" required>
+                <input type="tel" class="form-control" name="contactNo" id="contactNo" value = "{{ user.contactNumber }}" required>
              </div>
              <div class="data">
             </br>
