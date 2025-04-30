@@ -29,10 +29,12 @@ def signup():
             flash('Username must be greater than 2 characters', category='error')
         elif password != confirmPassword:
             flash("Password doesn't match", category='error')
-        elif len(password) < 8:
+        elif len(password) < 7:
             flash('Password must be greater than 8 characters', category='error')
-        elif len(confirmPassword) < 8:
+        elif len(confirmPassword) < 7:
             flash('ConfirmPassword must be greater than 8 characters', category='error')
+        elif len(contactNumber) <= 11:
+            flash('contactNumber must be greater than 10 characters', category='error')
         else:
             # Add User to Database
             pass
