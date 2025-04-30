@@ -17,11 +17,14 @@ def login():
         # Check if the user exists in the database
         user = User.query.filter_by(email=email).first()
 
-        if user.password == password :
-            flash("Login successful!", category="success")
-            return render_template('profile.html', user=user)  # Redirect to the home page (or dashboard)
+        if user:
+            if user.password == password :
+                flash("Login successful!", category="success")
+                return render_template('profile.html', user=user)  # Redirect to the home page (or dashboard)
+            else:
+                flash("Invalid email or password. Please try again.", category="error")
         else:
-            flash("Invalid email or password. Please try again.", category="error")
+            flash("Email doesn't exist. Please try again.", category="error")
 
     return render_template("login.html")
 
