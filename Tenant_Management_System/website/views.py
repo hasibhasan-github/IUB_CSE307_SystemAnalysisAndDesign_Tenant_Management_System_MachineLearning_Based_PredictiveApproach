@@ -18,29 +18,36 @@ def explore():
 # Profile Templates Route
 
 @views.route('/profile')
+@login_required
 def profile():
     return render_template("profile.html")
 
 @views.route('/info')
+@login_required
 def info():
     return render_template("info.html")
 
 @views.route('/report')
+@login_required
 def report():
     return render_template("report.html")
 
 @views.route('/noti')
+@login_required
 def noti():
     return render_template("noti.html")
 
 @views.route('/service')
+@login_required
 def service():
     return render_template("service.html")
 
 @views.route('/pay')
+@login_required
 def pay():
     return render_template("pay.html")
 
 @views.route('/pred')
+@login_required
 def pred():
     return render_template("pred.html")
