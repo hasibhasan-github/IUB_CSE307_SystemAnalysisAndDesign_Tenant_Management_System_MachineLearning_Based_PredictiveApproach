@@ -67,10 +67,15 @@
 
               {% endblock %}
               
-              <li><a href="">
+              {% block pay %}
+
+              <li><a href="pay">
                 <i class="fas fa-wallet"></i>
                 <span class="nav-item">Payment</span>
               </a></li>
+
+              {% endblock %}
+
               <!-- <li><a href="">
                 <i class="fas fa-cog"></i>
                 <span class="nav-item"></span>
