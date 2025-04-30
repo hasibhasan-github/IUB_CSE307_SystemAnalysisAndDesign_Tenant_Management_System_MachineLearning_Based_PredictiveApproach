@@ -94,7 +94,13 @@ Information
              <div class="data">
             </br>
               <h4>Date of Birth</h4>
-              <input type="date" class="form-control" id="dob" name="dob" required>
+              <input type="date" class="form-control" id="dob" name="dob"
+              {% if ver %}
+              placeholder= "{{ ver.dob }}"
+            {% else %}
+                placeholder= "Enter Your NID Number"
+            {% endif %} 
+             required>
           </div>
         </div>
         <div class="info_data">
