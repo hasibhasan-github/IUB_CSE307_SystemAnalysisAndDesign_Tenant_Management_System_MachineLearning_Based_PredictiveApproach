@@ -26,15 +26,16 @@ def profile():
 @login_required
 def info():
     nid_number = request.form.get("NId")
-    dob = request.form.get("")
-    verification_status = request.form.get("")
-    user_id = request.form.get("")
     name = request.form.get("name")
     gender = request.form.get("gender")
     email = request.form.get("email")
-    contact_number = request.form.get("")
-    user_type = request.form.get("")
-    address = request.form.get("")
+    contact_number = request.form.get("contactNo")
+    dob = request.form.get("dob")
+    user_type = request.form.get("usertype")
+    address = request.form.get("add")
+    verification_status = request.form.get("verify")
+    user_id = request.form.get("id")
+    
 
     return render_template("info.html", user = current_user)
 
