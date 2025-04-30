@@ -15,7 +15,7 @@ def homeg():
 def explore():
     return render_template("explore.html")
 
-# Profile Templates Route
+# Profile Templates Route Tenant
 
 @views.route('/profile')
 @login_required
@@ -51,3 +51,5 @@ def pay():
 @login_required
 def pred():
     return render_template("pred.html")
+
+# Profile Templates Route
