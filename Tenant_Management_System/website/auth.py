@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from . import db
+from flask_login import login_user, login_required, logout_user, current_user
 
 
 from .models import User
@@ -20,7 +21,8 @@ def login():
         if user:
             if user.password == password :
                 flash("Login successful!", category="success")
-                return render_template('profile.html', user=user)  # Redirect to the home page (or dashboard)
+                login_user(user, remember=True)
+                return render_template('profile.html')  # Redirect to the home page (or dashboard)
             else:
                 flash("Invalid email or password. Please try again.", category="error")
         else:
@@ -43,7 +45,11 @@ def signup():
         password = request.form.get('password')
         confirmPassword = request.form.get('confirmPassword')
 
-        if len(email) < 4:
+        user = User.query.filter_by(email=email).first()
+
+        if user:
+            flash("Email already exist. Please try another.", category="error")
+        elif len(email) < 4:
             flash('Email must be greater than 4 characters', category='error')
         elif len(username) < 2:
             flash('Username must be greater than 2 characters', category='error')
@@ -67,6 +73,7 @@ def signup():
             db.session.add(new_user)
             db.session.commit()
             flash('Registration Successful', category='success')
+            login_user(user, remember=True)
             return redirect(url_for('views.profile'))
 
     return render_template("signup.html")
