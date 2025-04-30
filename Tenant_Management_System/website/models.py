@@ -61,7 +61,15 @@ class MaintenanceRequest(db.Model):
     
     # Maintenance Service Details
     issue_type = db.Column(db.String(50), nullable=False)
-    issue_description = db.Column(db.Text, nullable=False)
-    preferred_time = db.Column(db.DateTime, nullable=False)
-    access_instructions = db.Column(db.Text, nullable=True)
+
+class Rent(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    
+    # Rent Information
+    tenant_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Link to User (Tenant)
+    month = db.Column(db.String(20), nullable=False)
+    year = db.Column(db.Integer, nullable=False)
+    rent_status = db.Column(db.String(20), default='Due', nullable=False)
+
+    tenant = db.relationship('User', backref=db.backref('rent', lazy=True))
 
