@@ -56,7 +56,12 @@ Information
         <div class="info_data">
              <div class="data">
                 <h4>NID Number</h4>
-                <input type="text" class="form-control" id="NId" name="NId" placeholder="Enter your NID">
+                <input type="text" class="form-control" id="NId" name="NId" 
+                placeholder="{% if ver %}
+                  {{ ver.nid_number }}
+                {% else %}
+                    No verification record found
+                {% endif %}" >
              </div>
              <div class="data">
                <h4>Your Name</h4>
@@ -116,7 +121,13 @@ Information
       <div class="data">
       </br>
       <label for="verify" class="form-label"><h4>Verification Status</h4></label>
-      <input type="text" class="form-control" id="verify" name="verify" value="{{ user.verification_status }}" readonly>
+      <input type="text" class="form-control" id="verify" name="verify" 
+      value="{% if ver %}
+      {{ ver.verification_status }}
+    {% else %}
+        No verification record found
+    {% endif %}" 
+      readonly>
     </div>
     <div class="data">
     </br>

@@ -56,9 +56,9 @@ def info():
         db.session.add(new_verification)
         db.session.commit() 
         flash("Verification Request Successful!", category="success")
-        return render_template("info.html", user = current_user, verify = verify)
+        return render_template("info.html", user = current_user, ver = verify)
 
-    return render_template("info.html", user = current_user, verify = verify)
+    return render_template("info.html", user = current_user, ver = verify)
 
 @views.route('/report')
 @login_required
