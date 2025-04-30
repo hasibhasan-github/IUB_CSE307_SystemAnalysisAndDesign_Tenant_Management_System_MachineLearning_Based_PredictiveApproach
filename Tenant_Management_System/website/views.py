@@ -54,7 +54,7 @@ def info():
             )
         db.session.add(new_verification)
         db.session.commit() 
-        flash("Login successful!", category="success")
+        flash("Verification Request Successful!", category="success")
 
     return render_template("info.html", user = current_user)
 
