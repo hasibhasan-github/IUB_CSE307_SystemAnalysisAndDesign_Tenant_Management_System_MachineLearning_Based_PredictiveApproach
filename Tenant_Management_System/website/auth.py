@@ -22,7 +22,7 @@ def login():
             if user.password == password :
                 flash("Login successful!", category="success")
                 login_user(user, remember=True)
-                return render_template('profile.html')  # Redirect to the home page (or dashboard)
+                return redirect(url_for('views.profile'))
             else:
                 flash("Invalid email or password. Please try again.", category="error")
         else:
@@ -31,8 +31,10 @@ def login():
     return render_template("login.html")
 
 @auth.route('/logout')
+@login_required
 def logout():
-    return 
+    logout_user()
+    return redirect(url_for('auth.login'))
 
 @auth.route('/signup',  methods = ['GET', 'POST'])
 def signup():
