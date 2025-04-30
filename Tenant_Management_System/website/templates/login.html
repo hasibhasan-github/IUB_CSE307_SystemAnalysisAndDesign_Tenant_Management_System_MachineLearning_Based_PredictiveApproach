@@ -45,6 +45,22 @@
         <a href="home" class="btn btn-secondary"> X </a>
     </div>
 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %} 
+
+    {% for message in messages %}
+    <div class="alert alert-danger alter-dismissable fade show" role = "alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">
+                &times;
+            </span>
+        </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh; flex-direction: column; background: rgba(0, 0, 0, 0.5);">
         <!-- Blue Gradient Heading -->
         <h1 class="text-center">Tenant Management System</h1>

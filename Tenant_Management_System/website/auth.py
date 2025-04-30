@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from . import db
 
+
 from .models import User
 
 auth = Blueprint('auth', __name__)
@@ -8,8 +9,20 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods = ['GET', 'POST'])
 def login():
-    data = request.form
-    print(data)
+    if request.method == 'POST':
+        # Get form data (username and password)
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        # Check if the user exists in the database
+        user = User.query.filter_by(email=email).first()
+
+        if user.password == password :
+            flash("Login successful!", category="success")
+            return render_template('profile.html', user=user)  # Redirect to the home page (or dashboard)
+        else:
+            flash("Invalid email or password. Please try again.", category="error")
+
     return render_template("login.html")
 
 @auth.route('/logout')
