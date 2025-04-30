@@ -99,4 +99,11 @@ class ServiceProvider(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     phone = db.Column(db.String(15), nullable=False)
 
-    
+class ServiceBill(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    amount = db.Column(db.Float, nullable=False)
+    due_date = db.Column(db.Date, nullable=False)
+    service_provider_id = db.Column(db.Integer, db.ForeignKey('service_provider.id'), nullable=False)
+
+    # Relationship to the ServiceProvider model
+    service_provider = db.relationship('ServiceProvider', backref=db.backref('bills', lazy=True))  
