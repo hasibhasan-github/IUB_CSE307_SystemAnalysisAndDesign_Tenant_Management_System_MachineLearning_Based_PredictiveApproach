@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from flask_login import  login_required, current_user
 
 views = Blueprint('views', __name__)
@@ -22,9 +22,13 @@ def explore():
 def profile():
     return render_template("profile.html", user = current_user)
 
-@views.route('/info')
+@views.route('/info', methods = ['GET', 'POST'])
 @login_required
 def info():
+    nid_number = request.form.get("")
+    dob = request.form.get("")
+    verification_status = request.form.get("")
+
     return render_template("info.html", user = current_user)
 
 @views.route('/report')
