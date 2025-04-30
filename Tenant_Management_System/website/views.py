@@ -39,3 +39,7 @@ def service():
 @views.route('/pay')
 def pay():
     return render_template("pay.html")
+
+@views.route('/pred')
+def pred():
+    return render_template("pred.html")
