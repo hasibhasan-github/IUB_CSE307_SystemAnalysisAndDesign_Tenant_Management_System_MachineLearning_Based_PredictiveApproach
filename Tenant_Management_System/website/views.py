@@ -28,6 +28,13 @@ def info():
     nid_number = request.form.get("")
     dob = request.form.get("")
     verification_status = request.form.get("")
+    user_id = 
+    name = cuser.name
+    gender = 
+    email = 
+    contact_number = 
+    user_type = 
+    address = 
 
     return render_template("info.html", user = current_user)
 
