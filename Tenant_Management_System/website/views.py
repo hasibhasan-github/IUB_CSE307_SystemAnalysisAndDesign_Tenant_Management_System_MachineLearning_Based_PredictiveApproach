@@ -23,3 +23,7 @@ def profile():
 @views.route('/info')
 def info():
     return render_template("info.html")
+
+@views.route('/report')
+def report():
+    return render_template("report.html")
