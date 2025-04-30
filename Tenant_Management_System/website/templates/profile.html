@@ -1,77 +1,11 @@
 {% extends 'base.html' %}
 
 
-{% block contentHome %}
-<li><a href="{% url 'testserver:test' %}">
-  <i class="fas fa-home"></i>
-  <span class="nav-item">Home</span>
-</a></li>
+{% block title %}
+Profile
 {% endblock %}
 
 
-{% block contentProduct %}
-<li><a href="{% url 'testserver:productlist' %}">
-  <i class="fas fa-wallet"></i>
-  <span class="nav-item">Products</span>
-</a></li>  
-{% endblock %}
-
-
-{% block contentDashHead %}
-  <h1>Orders</h1>
-{% endblock %}
-
-
-{% block contentButton %}
-<!-- <a href="{% url 'testserver:product' %}" class="button-30" role="button">Add New Products</a> -->
-{% endblock %}
-
-
-{% block contentDash %}
-
-<div class="table-box">
-  <div class="table-row table-head">
-      <div class="table-cell first-cell">
-          <p>Order ID</p>
-      </div>
-      <div class="table-cell">
-          <p>Order Date</p>
-      </div>
-      <div class="table-cell ">
-          <p>Quantity</p>
-      </div> 
-      <div class="table-cell last-cell">
-          <p>ProductID</p>
-      </div> 
-  </div>
-
-
-
-  {% for products in object_list %}
-  <div class="table-row">
-    <div class="table-cell first-cell">
-        <p>{{ products.orderId }}</p>
-    </div>
-    <div class="table-cell">
-        <p>{{ products.orderDate }}</p>
-    </div>
-    <div class="table-cell ">
-        <p>{{ products.quantity }}</p>
-    </div> 
-    <div class="table-cell last-cell">
-        <p>{{ products.productID_id }}</p>
-    </div> 
-</div>
-{% endfor %}  
-
-
-
-    
-    
-
-</div> 
-
-{% endblock %}
 
 
 

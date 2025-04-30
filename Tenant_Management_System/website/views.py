@@ -13,3 +13,7 @@ def homeg():
 @views.route('/explore')
 def explore():
     return render_template("base.html")
+
+@views.route('/profile')
+def profile():
+    return render_template("profile.html")
