@@ -25,16 +25,16 @@ def profile():
 @views.route('/info', methods = ['GET', 'POST'])
 @login_required
 def info():
-    nid_number = request.form.get("")
+    nid_number = request.form.get("NId")
     dob = request.form.get("")
     verification_status = request.form.get("")
-    user_id = 
-    name = cuser.name
-    gender = 
-    email = 
-    contact_number = 
-    user_type = 
-    address = 
+    user_id = request.form.get("")
+    name = request.form.get("name")
+    gender = request.form.get("gender")
+    email = request.form.get("email")
+    contact_number = request.form.get("")
+    user_type = request.form.get("")
+    address = request.form.get("")
 
     return render_template("info.html", user = current_user)
 
