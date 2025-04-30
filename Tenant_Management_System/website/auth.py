@@ -19,6 +19,7 @@ def signup():
         username = request.form.get('username')
         email = request.form.get('email')
         gender = request.form.get('gender')
+        userType = request.form.get('userType')
         contactNumber = request.form.get('contactNumber')
         password = request.form.get('password')
         confirmPassword = request.form.get('confirmPassword')

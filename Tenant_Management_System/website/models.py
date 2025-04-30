@@ -8,3 +8,4 @@ class User(db.Model, UserMixin):
     username = db.Coloumn(db.String(30),  nullable=False)
     gender = db.Coloumn(db.String(10))
     contactNumber = db.Coloumn(db.String(11),  nullable=False)
+    userType = db.Coloumn(db.String(10))
