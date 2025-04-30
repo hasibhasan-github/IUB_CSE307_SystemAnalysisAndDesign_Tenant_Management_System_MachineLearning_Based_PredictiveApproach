@@ -28,6 +28,8 @@ def profile():
 @views.route('/info', methods = ['GET', 'POST'])
 @login_required
 def info():
+    data = request.form
+    print(data)
     if request.method == 'POST':
         nid_number = request.form.get("NId")
         name = request.form.get("name")
@@ -55,6 +57,7 @@ def info():
         db.session.add(new_verification)
         db.session.commit() 
         flash("Verification Request Successful!", category="success")
+        return render_template("info.html", user = current_user)
 
     return render_template("info.html", user = current_user)
 
