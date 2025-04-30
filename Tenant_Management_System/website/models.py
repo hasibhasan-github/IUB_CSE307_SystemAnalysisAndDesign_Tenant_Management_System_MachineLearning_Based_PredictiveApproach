@@ -102,8 +102,13 @@ class ServiceProvider(db.Model):
 class ServiceBill(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     amount = db.Column(db.Float, nullable=False)
-    due_date = db.Column(db.Date, nullable=False)
     service_provider_id = db.Column(db.Integer, db.ForeignKey('service_provider.id'), nullable=False)
 
     # Relationship to the ServiceProvider model
     service_provider = db.relationship('ServiceProvider', backref=db.backref('bills', lazy=True))  
+
+
+class Notification(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    message = db.Column(db.String(255), nullable=False)
+
