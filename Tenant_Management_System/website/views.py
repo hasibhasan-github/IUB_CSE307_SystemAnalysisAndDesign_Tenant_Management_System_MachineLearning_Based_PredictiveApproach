@@ -35,3 +35,7 @@ def noti():
 @views.route('/service')
 def service():
     return render_template("service.html")
+
+@views.route('/pay')
+def pay():
+    return render_template("pay.html")
