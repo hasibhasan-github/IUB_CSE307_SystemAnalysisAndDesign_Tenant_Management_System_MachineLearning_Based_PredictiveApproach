@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, request
 from flask_login import  login_required, current_user
 
+from .models import Verification
+
 views = Blueprint('views', __name__)
 
 @views.route('/')
@@ -25,17 +27,32 @@ def profile():
 @views.route('/info', methods = ['GET', 'POST'])
 @login_required
 def info():
-    nid_number = request.form.get("NId")
-    name = request.form.get("name")
-    gender = request.form.get("gender")
-    email = request.form.get("email")
-    contact_number = request.form.get("contactNo")
-    dob = request.form.get("dob")
-    user_type = request.form.get("usertype")
-    address = request.form.get("add")
-    verification_status = request.form.get("verify")
-    user_id = request.form.get("id")
+    if request.method == 'POST':
+        nid_number = request.form.get("NId")
+        name = request.form.get("name")
+        gender = request.form.get("gender")
+        email = request.form.get("email")
+        contact_number = request.form.get("contactNo")
+        dob = request.form.get("dob")
+        user_type = request.form.get("usertype")
+        address = request.form.get("add")
+        verification_status = request.form.get("verify")
+        user_id = request.form.get("id")
     
+        new_verification = Verification(
+                nid_number=nid_number,
+                name=name,
+                gender=gender,
+                email=email,
+                contact_number=contact_number,
+                dob=dob,  # Ensure 'dob' is in the correct format (datetime.date)
+                user_type=user_type,
+                address=address,
+                verification_status=verification_status,
+                user_id=user_id  # This is the foreign key linking to the User model
+            )
+        db.session.add(new_verification)
+        db.session.commit() 
 
     return render_template("info.html", user = current_user)
 
