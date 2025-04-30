@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, flash
 from flask_login import  login_required, current_user
 
 from .models import Verification
@@ -54,6 +54,7 @@ def info():
             )
         db.session.add(new_verification)
         db.session.commit() 
+        flash("Login successful!", category="success")
 
     return render_template("info.html", user = current_user)
 
