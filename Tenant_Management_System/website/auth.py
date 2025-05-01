@@ -20,9 +20,14 @@ def login():
 
         if user:
             if user.password == password :
-                flash("Login successful!", category="success")
-                login_user(user, remember=True)
-                return redirect(url_for('views.profile'))
+                if user.userType == "Landlord":
+                    flash("Login successful!", category="success")
+                    login_user(user, remember=True)
+                    return redirect(url_for('views.Lprofile'))
+                else:
+                    flash("Login successful!", category="success")
+                    login_user(user, remember=True)
+                    return redirect(url_for('views.profile'))
             else:
                 flash("Invalid email or password. Please try again.", category="error")
         else:
