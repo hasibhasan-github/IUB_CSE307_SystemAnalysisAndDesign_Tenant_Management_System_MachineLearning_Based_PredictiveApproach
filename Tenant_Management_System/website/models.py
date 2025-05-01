@@ -1,5 +1,6 @@
 from . import db
 from flask_login import UserMixin
+from sqlalchemy.orm import relationship
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key = True)
@@ -10,14 +11,14 @@ class User(db.Model, UserMixin):
     contactNumber = db.Column(db.String(11),  nullable=False)
     userType = db.Column(db.String(10))
 
-class Landlord(User):
-    __tablename__ = 'landlord'
-
+class Landlord(db.Model, UserMixin):
     LID = db.Column(db.Integer, primary_key = True)
-
-    def __init__(self, email, password, username, contactNumber, userType, gender=None):
-        # Call the parent class (User) constructor to initialize common fields
-        super().__init__(email=email, password=password, username=username, contactNumber=contactNumber, userType=userType, gender=gender)
+    email = db.Column(db.String(30), unique = True,  nullable=False)
+    password = db.Column(db.String(30),  nullable=False)
+    username = db.Column(db.String(30),  nullable=False)
+    gender = db.Column(db.String(10))
+    contactNumber = db.Column(db.String(11),  nullable=False)
+    userType = db.Column(db.String(10))
         
 
 class Verification(db.Model):
