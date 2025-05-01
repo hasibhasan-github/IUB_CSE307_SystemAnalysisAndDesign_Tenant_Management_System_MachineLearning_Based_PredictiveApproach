@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash
 from flask_login import  login_required, current_user
 
-from .models import Verification
+from .models import Verification, Property
 from . import db
 
 views = Blueprint('views', __name__)
@@ -176,6 +176,7 @@ def serviceL():
 @views.route('/addprop', methods = ['GET', 'POST'])
 @login_required
 def addprop():
+    verify = Property.query.filter_by(bathrooms = current_user.id).first()
     if request.method == 'POST':
         property_name = request.form.get("propertyName")
         property_description = request.form.get("propertyDescription")
@@ -183,9 +184,26 @@ def addprop():
         property_rent = request.form.get("propertyRent")
         property_type = request.form.get("propertyType")
         bedrooms = request.form.get("bedrooms")
-        bathrooms = request.form.get("bathrooms")
+        bathrooms = current_user.id
         property_size = request.form.get("propertySize")
         available_from = request.form.get("availableFrom")
         lease_terms = request.form.get("leaseTerms")
+
+        new_property = Property(
+        property_name=property_name,
+        property_description=property_description,
+        property_location=property_location,
+        property_rent=property_rent,
+        property_type=property_type,
+        bedrooms=bedrooms,
+        bathrooms=bathrooms,
+        property_size=property_size,
+        available_from=available_from,
+        lease_terms=lease_terms,
+                         # Assuming current_user is the landlord
+)       
+        db.session.add(new_property)
+        db.session.commit()
+        return render_template("serviceL.html", user = current_user)
 
     return render_template("addprop.html", user = current_user)
