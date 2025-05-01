@@ -94,9 +94,8 @@ def pred():
 @login_required
 def lease():
     tmp = LeaseAgreement.query.filter_by(landlord_email = current_user.email).first()
-    les =LeaseAgreement.query.filter_by(landlord_email = current_user.email).all()
-    
-    return render_template("leasedetails.html", user = current_user)
+
+    return render_template("leasedetails.html", user = current_user, tmp=tmp)
 
 @views.route('/leasef', methods = ['GET', 'POST'])
 @login_required
