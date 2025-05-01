@@ -67,23 +67,22 @@ Property
 
       {% if prop %}
 
-        {% for data in prop1 %}
-        <div class="table-row">
-          <div class="table-cell first-cell">
-              <p>{{ data.property_name }}</p>
-          </div>
-          <div class="table-cell">
-              <p> {{ data.property_type }}</p>
-          </div>
-          <div class="table-cell ">
-              <a href=""> Update </a>
-              <!-- <p>Update Details </p> -->
-          </div> 
-          <div class="table-cell last-cell">
-              <a href=""> Delete </a>
-          </div> 
-      </div>
-      {% endfor %}  
+          {% for data in prop1 %}
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>{{ data.property_name }}</p>
+            </div>
+            <div class="table-cell">
+                <p> {{ data.property_type }}</p>
+            </div>
+            <div class="table-cell ">
+              <p> {{ data.property_rent }}</p>
+            </div> 
+            <div class="table-cell last-cell">
+              <p> {{ data.property_size }}</p>
+            </div> 
+        </div>
+        {% endfor %}  
 
       {% else %}
             
