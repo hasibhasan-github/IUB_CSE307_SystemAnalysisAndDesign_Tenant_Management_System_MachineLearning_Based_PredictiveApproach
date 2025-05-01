@@ -115,3 +115,38 @@ def mainform():
 @login_required
 def Lprofile():
     return render_template("Lprofile.html", user = current_user)
+
+@views.route('/info', methods = ['GET', 'POST'])
+@login_required
+def info():
+    verify = Verification.query.filter_by(user_id = current_user.id).first()
+    if request.method == 'POST':
+        nid_number = request.form.get("NId")
+        name = request.form.get("name")
+        gender = request.form.get("gender")
+        email = request.form.get("email")
+        contact_number = request.form.get("contactNo")
+        dob = request.form.get("dob")
+        user_type = request.form.get("usertype")
+        address = request.form.get("add")
+        verification_status = "Pending"
+        user_id = request.form.get("id")
+    
+        new_verification = Verification(
+                nid_number=nid_number,
+                name=name,
+                gender=gender,
+                email=email,
+                contact_number=contact_number,
+                dob=dob,  # Ensure 'dob' is in the correct format (datetime.date)
+                user_type=user_type,
+                address=address,
+                verification_status=verification_status,
+                user_id=user_id  # This is the foreign key linking to the User model
+            )
+        db.session.add(new_verification)
+        db.session.commit() 
+        flash("Verification Request Successful!", category="success")
+        return render_template("info.html", user = current_user, ver = verify)
+
+    return render_template("info.html", user = current_user, ver = verify)
