@@ -171,7 +171,11 @@ def noti1():
 @views.route('/serviceL')
 @login_required
 def serviceL():
-    return render_template("serviceL.html", user = current_user)
+    prop = Property.query.filter_by(bathrooms = current_user.id).first()
+    prop1 = Property.query.filter_by(bathrooms = current_user.id).all()
+
+    # return render_template("serviceL.html", user = current_user)
+    return render_template("serviceL.html", user = current_user, prop = prop, prop1 = prop1)
 
 @views.route('/addprop', methods = ['GET', 'POST'])
 @login_required
