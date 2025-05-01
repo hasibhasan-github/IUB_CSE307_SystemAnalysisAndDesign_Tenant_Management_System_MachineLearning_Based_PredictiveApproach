@@ -213,3 +213,13 @@ def addprop():
         return render_template("serviceL.html", user = current_user, prop = prop, prop1 = prop1)
 
     return render_template("addprop.html", user = current_user, prop = prop, prop1 = prop1)
+
+
+@views.route('/Lease')
+@login_required
+def Lease():
+    # prop = Property.query.filter_by(bathrooms = current_user.id).first()
+    # prop1 = Property.query.filter_by(bathrooms = current_user.id).all()
+
+    return render_template("Lease.html", user = current_user)
+    # return render_template("serviceL.html", user = current_user, prop = prop, prop1 = prop1)
