@@ -12,7 +12,7 @@ class User(db.Model, UserMixin):
     userType = db.Column(db.String(10))
 
 class Landlord(db.Model, UserMixin):
-    LID = db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.Integer, primary_key = True)
     email = db.Column(db.String(30), unique = True,  nullable=False)
     password = db.Column(db.String(30),  nullable=False)
     username = db.Column(db.String(30),  nullable=False)
@@ -76,7 +76,7 @@ class Rent(db.Model):
     
     # Rent Information
     tenant_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Link to User (Tenant)
-    landlord_id = db.Column(db.Integer, db.ForeignKey('landlord.LID'), nullable=False)  # Link to User (Tenant)
+    landlord_id = db.Column(db.Integer, db.ForeignKey('landlord.id'), nullable=False)  # Link to User (Tenant)
     month = db.Column(db.String(20), nullable=False)
     year = db.Column(db.Integer, nullable=False)
     rent_status = db.Column(db.String(20), default='Due', nullable=False)
