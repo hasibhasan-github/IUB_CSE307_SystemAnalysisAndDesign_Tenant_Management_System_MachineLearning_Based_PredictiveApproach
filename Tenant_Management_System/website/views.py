@@ -65,6 +65,11 @@ def info():
 def report():
     return render_template("report.html", user = current_user)
 
+@views.route('/report1')
+@login_required
+def report1():
+    return render_template("report1.html", user = current_user)
+
 @views.route('/noti')
 @login_required
 def noti():
