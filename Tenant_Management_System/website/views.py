@@ -100,4 +100,9 @@ def lease():
 def leasef():
     return render_template("leaseform.html", user = current_user)
 
+@views.route('/mainform')
+@login_required
+def mainform():
+    return render_template("mainform.html", user = current_user)
+
 # Profile Templates Route
