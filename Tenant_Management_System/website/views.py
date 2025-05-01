@@ -99,16 +99,16 @@ def lease():
 @login_required
 def leasef():
     if request.method == 'POST':
-        tenant_name = request.form.get("propertyName")
-        tenant_email = request.form.get("propertyDescription")
-        tenant_phone_number = request.form.get("propertyLocation")
+        tenant_name = request.form.get("tenantName")
+        tenant_email = request.form.get("tenantEmail")
+        tenant_phone_number = request.form.get("tenantPhone")
         landlord_name = current_user.username
         landlord_email = current_user.email
         landlord_phone_number = current_user.contactNumber
-        monthly_rent = current_user.id
-        security_deposit = request.form.get("propertySize")
-        lease_start_date = request.form.get("availableFrom")
-        lease_end_date = request.form.get("leaseTerms") 
+        monthly_rent = request.form.get("monthlyRent")
+        security_deposit = request.form.get("securityDeposit") #monthlyRent
+        lease_start_date = request.form.get("leaseStart")
+        lease_end_date = request.form.get("leaseEnd") 
     return render_template("leaseform.html", user = current_user)
 
 @views.route('/mainform')
