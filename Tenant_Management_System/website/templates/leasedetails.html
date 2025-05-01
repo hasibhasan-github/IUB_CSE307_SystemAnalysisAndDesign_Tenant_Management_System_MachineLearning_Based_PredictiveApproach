@@ -60,16 +60,17 @@
 
     <div class="container">
         <!-- Tenant Details -->
-        <div class="card">
+        <!-- <div class="card">
             <div class="card-header">Tenant Details</div>
             <div class="card-body tenant-details">
                 <p><span>Tenant Name:</span> John Doe</p>
                 <p><span>Tenant Email:</span> johndoe@example.com</p>
                 <p><span>Tenant Phone Number:</span> +1 234 567 890</p>
             </div>
-        </div>
+        </div> -->
 
-        <!-- Landlord Details -->
+        {% if tmp %}
+
         <div class="card">
             <div class="card-header">Landlord Details</div>
             <div class="card-body landlord-details">
@@ -78,6 +79,20 @@
                 <p><span>Landlord Phone Number:</span> +1 987 654 321</p>
             </div>
         </div>
+
+        {% else %}
+        <div class="card">
+            <div class="card-header">Landlord Details</div>
+            <div class="card-body landlord-details">
+                <p><span>Landlord Name:</span> No Data</p>
+                <p><span>Landlord Email:</span> No Data</p>
+                <p><span>Landlord Phone Number:</span> No Data</p>
+            </div>
+        </div>
+        {% endif %} 
+
+        <!-- Landlord Details -->
+
 
         <!-- Lease Details -->
         <div class="card">
