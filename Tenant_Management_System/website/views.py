@@ -95,9 +95,9 @@ def pred():
 def lease():
     return render_template("leasedetails.html", user = current_user)
 
-@views.route('/lease')
+@views.route('/leasef')
 @login_required
-def lease():
-    return render_template("leasedetails.html", user = current_user)
+def leasef():
+    return render_template("leaseform.html", user = current_user)
 
 # Profile Templates Route
