@@ -28,29 +28,63 @@ Report
   <div class="right">
     <div class="info">
         <h3>Monthly Usage Report</h3>
+
+
+
+        <div class="info_data">
+          <div class="data">
+
+             <div class="card" style="margin-bottom: 20px;">
+               <div class="card-body">
+                 <!-- <h5 class="card-title">Electricity Bill Usage</h5> -->
+                 <div class="chart-container" style="position: relative; height: 1px; width: 1px;">
+                   <canvas id="electricityChart"></canvas>
+                 </div>
+               </div>
+             </div>
+
+          </div>
+          <div class="data">
+
+             <div class="card" style="margin-bottom: 20px;">
+               <div class="card-body">
+                 <!-- <h5 class="card-title">Service Bill Usage</h5> -->
+                 <div class="chart-container" style="position: relative; height: 1px; width: 1px;">
+                   <canvas id="serviceChart"></canvas>
+                 </div>
+               </div>
+             </div>
+
+       </div>
+     </div>
+
+
+
         <div class="info_data">
              <div class="data">
 
-                <div class="card" style="margin-bottom: 20px;">
-                  <div class="card-body">
-                    <h5 class="card-title">Electricity Bill Usage</h5>
-                    <div class="chart-container" style="position: relative; height: 320px; width: 100%;">
-                      <canvas id="electricityChart"></canvas>
-                    </div>
+              <div class="card" style="margin-bottom: 20px;">
+                <div class="card-body">
+                  <h5 class="card-title">Total Payment Usage</h5>
+                  <div class="chart-container" style="position: relative; height: 310px; width: 100%;">
+                    <canvas id="totalPaymentChart"></canvas>
                   </div>
                 </div>
+              </div>
 
              </div>
              <div class="data">
 
+                <!-- Water Bill Chart -->
                 <div class="card" style="margin-bottom: 20px;">
                   <div class="card-body">
-                    <h5 class="card-title">Service Bill Usage</h5>
-                    <div class="chart-container" style="position: relative; height: 320px; width: 100%;">
-                      <canvas id="serviceChart"></canvas>
+                    <h5 class="card-title">Water Bill Usage</h5>
+                    <div class="chart-container" style="position: relative; height: 310px; width: 100%;">
+                      <canvas id="waterChart"></canvas>
                     </div>
                   </div>
                 </div>
+              </div>
 
           </div>
         </div>
@@ -59,7 +93,7 @@ Report
   </div>           
 </div>
 <button type="submit" class="button-30" style="display: block; margin: 0 auto; text-align: center;">
-  <a href="report1"> See More Report </a>
+  <a href="report"> See Previous Report </a>
 </button>
 </div>
 <!-- </section>
