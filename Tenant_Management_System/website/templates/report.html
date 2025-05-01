@@ -34,7 +34,7 @@ Report
                 <div class="card" style="margin-bottom: 20px;">
                   <div class="card-body">
                     <h5 class="card-title">Electricity Bill Usage</h5>
-                    <div class="chart-container" style="position: relative; height: 200px; width: 100%;">
+                    <div class="chart-container" style="position: relative; height: 180px; width: 100%;">
                       <canvas id="electricityChart"></canvas>
                     </div>
                   </div>
@@ -46,7 +46,7 @@ Report
                 <div class="card" style="margin-bottom: 20px;">
                   <div class="card-body">
                     <h5 class="card-title">Service Bill Usage</h5>
-                    <div class="chart-container" style="position: relative; height: 200px; width: 100%;">
+                    <div class="chart-container" style="position: relative; height: 180px; width: 100%;">
                       <canvas id="serviceChart"></canvas>
                     </div>
                   </div>
@@ -56,8 +56,16 @@ Report
         </div>
         <div class="info_data">
              <div class="data">
-                <h4>Gender</h4>
-                <p>Male</p>
+
+                <div class="card" style="margin-bottom: 20px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Total Payment Usage</h5>
+                    <div class="chart-container" style="position: relative; height: 180px; width: 100%;">
+                      <canvas id="totalPaymentChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+
              </div>
              <div class="data">
               <h4>Subscription Type</h4>
@@ -76,22 +84,9 @@ Report
         </div>
     </div>
   
-  <div class="projects">
-        <h3>Profile Status</h3>
-        <div class="projects_data">
-             <div class="data">
-                <h4>Information Status</h4>
-                <p>Free User</p>
-             </div>
-             <div class="data">
-               <h4>Rating</h4>
-                <p>{{ LastOrder }}</p>
-          </div>
-        </div>
-    </div>
+
   </div>           
 </div>
-<input type="update" value="Update Information" class="button-30" role="button" readonly>
 </div>
 <!-- </section>
 
