@@ -166,3 +166,9 @@ def Lreport1():
 @login_required
 def noti1():
     return render_template("noti1.html", user = current_user)
+
+
+@views.route('/serviceL')
+@login_required
+def serviceL():
+    return render_template("serviceL.html", user = current_user)
