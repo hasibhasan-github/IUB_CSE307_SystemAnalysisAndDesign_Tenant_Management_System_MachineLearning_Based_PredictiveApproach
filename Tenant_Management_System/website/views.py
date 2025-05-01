@@ -95,9 +95,20 @@ def pred():
 def lease():
     return render_template("leasedetails.html", user = current_user)
 
-@views.route('/leasef')
+@views.route('/leasef', methods = ['GET', 'POST'])
 @login_required
 def leasef():
+    if request.method == 'POST':
+        property_name = request.form.get("propertyName")
+        property_description = request.form.get("propertyDescription")
+        property_location = request.form.get("propertyLocation")
+        property_rent = request.form.get("propertyRent")
+        property_type = request.form.get("propertyType")
+        bedrooms = request.form.get("bedrooms")
+        bathrooms = current_user.id
+        property_size = request.form.get("propertySize")
+        available_from = request.form.get("availableFrom")
+        lease_terms = request.form.get("leaseTerms") 
     return render_template("leaseform.html", user = current_user)
 
 @views.route('/mainform')
