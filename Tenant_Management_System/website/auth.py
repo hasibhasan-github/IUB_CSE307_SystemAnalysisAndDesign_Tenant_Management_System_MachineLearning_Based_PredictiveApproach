@@ -65,17 +65,21 @@ def signup():
             flash('contactNumber must be greater than 10 characters', category='error')
         else:
             # Add User to Database
-            new_user = User(
-                email=email,        # Replace with the user's email
-                password=password,          # Replace with a hashed password
-                username=username,              # Replace with the user's username
-                gender=gender,                       # Replace with gender
-                contactNumber=contactNumber,         # Replace with the user's contact number
-                userType=userType)                 # Replace with the user's type (e.g., "Tenant", "Admin"
-            db.session.add(new_user)
-            db.session.commit()
-            flash('Registration Successful', category='success')
-            # login_user(user, remember=True)
-            return redirect(url_for('views.home'))
+
+            if userType == "Landlord":
+                pass
+            else:
+                new_user = User(
+                    email=email,        # Replace with the user's email
+                    password=password,          # Replace with a hashed password
+                    username=username,              # Replace with the user's username
+                    gender=gender,                       # Replace with gender
+                    contactNumber=contactNumber,         # Replace with the user's contact number
+                    userType=userType)                 # Replace with the user's type (e.g., "Tenant", "Admin"
+                db.session.add(new_user)
+                db.session.commit()
+                flash('Registration Successful', category='success')
+                # login_user(user, remember=True)
+                return redirect(url_for('views.home'))
 
     return render_template("signup.html")
