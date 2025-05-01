@@ -16,7 +16,12 @@ def login():
         password = request.form.get('password')
 
         # Check if the user exists in the database
-        user = User.query.filter_by(email=email).first()
+        
+
+        if user.userType == "Landlord":
+            user = Landlord.query.filter_by(email=email).first()
+        else:
+            user = User.query.filter_by(email=email).first()
 
         if user:
             if user.password == password :

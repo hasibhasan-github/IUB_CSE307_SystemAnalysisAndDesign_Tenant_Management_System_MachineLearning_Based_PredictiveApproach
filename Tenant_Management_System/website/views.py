@@ -114,4 +114,4 @@ def mainform():
 @views.route('/Lprofile')
 @login_required
 def Lprofile():
-    return render_template("Lprofile.html", user = current_user)
+    return render_template("profile.html", user = current_user)
