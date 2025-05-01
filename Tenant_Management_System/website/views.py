@@ -116,9 +116,9 @@ def mainform():
 def Lprofile():
     return render_template("Lprofile.html", user = current_user)
 
-@views.route('/info', methods = ['GET', 'POST'])
+@views.route('/info1', methods = ['GET', 'POST'])
 @login_required
-def info():
+def info1():
     verify = Verification.query.filter_by(user_id = current_user.id).first()
     if request.method == 'POST':
         nid_number = request.form.get("NId")
@@ -147,6 +147,6 @@ def info():
         db.session.add(new_verification)
         db.session.commit() 
         flash("Verification Request Successful!", category="success")
-        return render_template("info.html", user = current_user, ver = verify)
+        return render_template("info1.html", user = current_user, ver = verify)
 
-    return render_template("info.html", user = current_user, ver = verify)
+    return render_template("info1.html", user = current_user, ver = verify)
