@@ -30,12 +30,28 @@ Report
         <h3>Monthly Usage Report</h3>
         <div class="info_data">
              <div class="data">
-                <h4>Full Name</h4>
-                <p>{{ user.username }}</p>
+
+                <div class="card" style="margin-bottom: 20px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Electricity Bill Usage</h5>
+                    <div class="chart-container" style="position: relative; height: 200px; width: 100%;">
+                      <canvas id="electricityChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+
              </div>
              <div class="data">
-               <h4>Email</h4>
-                <p>{{ user.email }}</p>
+
+                <div class="card" style="margin-bottom: 20px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Service Bill Usage</h5>
+                    <div class="chart-container" style="position: relative; height: 200px; width: 100%;">
+                      <canvas id="serviceChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+
           </div>
         </div>
         <div class="info_data">
