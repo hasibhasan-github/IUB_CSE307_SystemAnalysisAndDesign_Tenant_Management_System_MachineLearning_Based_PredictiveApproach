@@ -17,9 +17,10 @@ def login():
 
         # Check if the user exists in the database
         
-
+        user = None
         if user.userType == "Landlord":
             user = Landlord.query.filter_by(email=email).first()
+            print(user.LID)
         else:
             user = User.query.filter_by(email=email).first()
 
