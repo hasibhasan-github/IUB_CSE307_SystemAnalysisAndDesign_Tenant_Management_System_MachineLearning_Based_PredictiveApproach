@@ -176,7 +176,7 @@ def serviceL():
 @views.route('/addprop', methods = ['GET', 'POST'])
 @login_required
 def addprop():
-    verify = Property.query.filter_by(bathrooms = current_user.id).first()
+    prop = Property.query.filter_by(bathrooms = current_user.id).first()
     if request.method == 'POST':
         property_name = request.form.get("propertyName")
         property_description = request.form.get("propertyDescription")
@@ -204,6 +204,6 @@ def addprop():
 )       
         db.session.add(new_property)
         db.session.commit()
-        return render_template("serviceL.html", user = current_user)
+        return render_template("serviceL.html", user = current_user, prop = prop)
 
-    return render_template("addprop.html", user = current_user)
+    return render_template("addprop.html", user = current_user, prop = prop)
