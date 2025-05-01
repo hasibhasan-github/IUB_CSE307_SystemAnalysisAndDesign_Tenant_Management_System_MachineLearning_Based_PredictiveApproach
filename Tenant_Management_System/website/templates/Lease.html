@@ -54,10 +54,10 @@ Lease Agreement
      <div class="table-box">
       <div class="table-row table-head">
           <div class="table-cell first-cell">
-              <p>Property Name</p>
+              <p>Tenant Name</p>
           </div>
           <div class="table-cell">
-              <p>Property Type</p>
+              <p>Monthly Rent</p>
           </div>
           <div class="table-cell ">
               <p>Property Rent (BDT)</p>
@@ -69,21 +69,21 @@ Lease Agreement
     
     
 
-      {% if prop %}
+      {% if tmp %}
 
-          {% for data in prop1 %}
+          {% for data in les %}
           <div class="table-row">
             <div class="table-cell first-cell">
-                <p>{{ data.property_name }}</p>
+                <p>{{ data.tenant_name }}</p>
             </div>
             <div class="table-cell">
-                <p> {{ data.property_type }}</p>
+                <p> {{ data.monthly_rent }}</p>
             </div>
             <div class="table-cell ">
-              <p> {{ data.property_rent }}</p>
+              <p> {{ data.lease_start_date }}</p>
             </div> 
             <div class="table-cell last-cell">
-              <p> {{ data.property_size }}</p>
+              <p> {{ data.lease_end_date }}</p>
             </div> 
         </div>
         {% endfor %}  
