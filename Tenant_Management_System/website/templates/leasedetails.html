@@ -96,25 +96,26 @@
 
         {% if tmp %}
 
-        <div class="card">
-            <div class="card-header">Landlord Details</div>
-            <div class="card-body landlord-details">
-                <p><span>Landlord Name:</span>  {{ tmp.landlord_name }}</p>
-                <p><span>Landlord Email:</span> {{ tmp.landlord_email }} </p>
-                <p><span>Landlord Phone Number:</span> {{ tmp.landlord_phone_number }} </p>
+            <div class="card">
+                <div class="card-header">Landlord Details</div>
+                <div class="card-body lease-details">
+                    <p><span>Monthly Rent:</span>  {{ tmp.landlord_name }}</p>
+                    <p><span>Security Deposit:</span> {{ tmp.landlord_email }} </p>
+                    <p><span>Lease Start Date:</span> {{ tmp.landlord_phone_number }} </p>
+                    <p><span>Lease End Date:</span> No Data</p>
+                </div>
             </div>
-        </div>
 
         {% else %}
-        <div class="card">
-            <div class="card-header">Lease Details</div>
-            <div class="card-body lease-details">
-                <p><span>Monthly Rent:</span> No Data</p>
-                <p><span>Security Deposit:</span> No Data</p>
-                <p><span>Lease Start Date:</span> No Data</p>
-                <p><span>Lease End Date:</span> No Data</p>
+            <div class="card">
+                <div class="card-header">Lease Details</div>
+                <div class="card-body lease-details">
+                    <p><span>Monthly Rent:</span> No Data</p>
+                    <p><span>Security Deposit:</span> No Data</p>
+                    <p><span>Lease Start Date:</span> No Data</p>
+                    <p><span>Lease End Date:</span> No Data</p>
+                </div>
             </div>
-        </div>
         {% endif %} 
 
 
