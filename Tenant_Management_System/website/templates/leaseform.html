@@ -44,7 +44,7 @@
         <h2 class="mb-4">Lease Agreement Form</h2>
 
         <!-- Tenant Details -->
-        <form>
+        <form  method="POST">
             <div class="card mb-4">
                 <div class="card-header">
                     <strong>Tenant Details</strong>
@@ -52,15 +52,15 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="tenantName">Tenant Name</label>
-                        <input type="text" class="form-control" id="tenantName" placeholder="Enter Tenant's Name" required>
+                        <input type="text" class="form-control" name="tenantName" id="tenantName" placeholder="Enter Tenant's Name" required>
                     </div>
                     <div class="form-group">
                         <label for="tenantEmail">Tenant Email</label>
-                        <input type="email" class="form-control" id="tenantEmail" placeholder="Enter Tenant's Email" required>
+                        <input type="email" class="form-control" name="tenantEmail" id="tenantEmail" placeholder="Enter Tenant's Email" required>
                     </div>
                     <div class="form-group">
                         <label for="tenantPhone">Tenant Phone Number</label>
-                        <input type="tel" class="form-control" id="tenantPhone" placeholder="Enter Tenant's Phone Number" required>
+                        <input type="tel" class="form-control" name="tenantPhone" id="tenantPhone" placeholder="Enter Tenant's Phone Number" required>
                     </div>
                 </div>
             </div>
@@ -94,19 +94,19 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="monthlyRent">Monthly Rent ($)</label>
-                        <input type="number" class="form-control" id="monthlyRent" placeholder="Enter Monthly Rent" required>
+                        <input type="number" class="form-control" name="monthlyRent" id="monthlyRent" placeholder="Enter Monthly Rent" required>
                     </div>
                     <div class="form-group">
                         <label for="securityDeposit">Security Deposit ($)</label>
-                        <input type="number" class="form-control" id="securityDeposit" placeholder="Enter Security Deposit" required>
+                        <input type="number" class="form-control" name="securityDeposit" id="securityDeposit" placeholder="Enter Security Deposit" required>
                     </div>
                     <div class="form-group">
                         <label for="leaseStart">Lease Start Date</label>
-                        <input type="date" class="form-control" id="leaseStart" required>
+                        <input type="date" class="form-control" name="leaseStart" id="leaseStart" required>
                     </div>
                     <div class="form-group">
                         <label for="leaseEnd">Lease End Date</label>
-                        <input type="date" class="form-control" id="leaseEnd" required>
+                        <input type="date" class="form-control" name="leaseEnd" id="leaseEnd" required>
                     </div>
                 </div>
             </div>
