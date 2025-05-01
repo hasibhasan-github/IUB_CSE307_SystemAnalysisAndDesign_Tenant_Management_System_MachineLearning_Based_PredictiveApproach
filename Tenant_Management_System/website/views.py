@@ -177,15 +177,15 @@ def serviceL():
 @login_required
 def addprop():
     if request.method == 'POST':
-        nid_number = request.form.get("NId")
-        name = request.form.get("name")
-        gender = request.form.get("gender")
-        email = request.form.get("email")
-        contact_number = request.form.get("contactNo")
-        dob = request.form.get("dob")
-        user_type = request.form.get("usertype")
-        address = request.form.get("add")
-        verification_status = "Pending"
-        user_id = request.form.get("id")
+        property_name = request.form.get("NId")
+        property_description = request.form.get("name")
+        property_location = request.form.get("gender")
+        property_rent = request.form.get("email")
+        property_type = request.form.get("contactNo")
+        bedrooms = request.form.get("dob")
+        bathrooms = request.form.get("usertype")
+        property_size = request.form.get("add")
+        available_from = "Pending"
+        lease_terms = request.form.get("id")
 
     return render_template("addprop.html", user = current_user)
