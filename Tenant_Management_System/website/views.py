@@ -172,3 +172,8 @@ def noti1():
 @login_required
 def serviceL():
     return render_template("serviceL.html", user = current_user)
+
+@views.route('/addprop')
+@login_required
+def addprop():
+    return render_template("addprop.html", user = current_user)
