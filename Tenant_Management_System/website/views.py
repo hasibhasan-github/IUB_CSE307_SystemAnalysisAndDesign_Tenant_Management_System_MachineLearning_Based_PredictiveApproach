@@ -150,3 +150,14 @@ def info1():
         return render_template("info1.html", user = current_user, ver = verify)
 
     return render_template("info1.html", user = current_user, ver = verify)
+
+
+@views.route('/Lreport')
+@login_required
+def Lreport():
+    return render_template("Lreport.html", user = current_user)
+
+@views.route('/Lreport1')
+@login_required
+def Lreport1():
+    return render_template("Lreport1.html", user = current_user)
