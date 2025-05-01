@@ -106,3 +106,12 @@ def mainform():
     return render_template("mainform.html", user = current_user)
 
 # Profile Templates Route
+
+
+
+# Profile Templates Route Landlord
+
+@views.route('/Lprofile')
+@login_required
+def Lprofile():
+    return render_template("Lprofile.html", user = current_user)
