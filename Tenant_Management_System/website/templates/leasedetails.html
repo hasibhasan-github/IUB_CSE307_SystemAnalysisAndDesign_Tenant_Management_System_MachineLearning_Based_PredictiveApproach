@@ -76,7 +76,7 @@
             <div class="card-body landlord-details">
                 <p><span>Landlord Name:</span>  {{ tmp.landlord_name }}</p>
                 <p><span>Landlord Email:</span> {{ tmp.landlord_email }} </p>
-                <p><span>Landlord Phone Number:</span> {{ tmp.landlord_email }} </p>
+                <p><span>Landlord Phone Number:</span> {{ tmp.landlord_phone_number }} </p>
             </div>
         </div>
 
@@ -92,6 +92,29 @@
         {% endif %} 
 
         <!-- Landlord Details -->
+
+
+        {% if tmp %}
+
+        <div class="card">
+            <div class="card-header">Landlord Details</div>
+            <div class="card-body landlord-details">
+                <p><span>Landlord Name:</span>  {{ tmp.landlord_name }}</p>
+                <p><span>Landlord Email:</span> {{ tmp.landlord_email }} </p>
+                <p><span>Landlord Phone Number:</span> {{ tmp.landlord_phone_number }} </p>
+            </div>
+        </div>
+
+        {% else %}
+        <div class="card">
+            <div class="card-header">Landlord Details</div>
+            <div class="card-body landlord-details">
+                <p><span>Landlord Name:</span> No Data</p>
+                <p><span>Landlord Email:</span> No Data</p>
+                <p><span>Landlord Phone Number:</span> No Data</p>
+            </div>
+        </div>
+        {% endif %} 
 
 
         <!-- Lease Details -->
