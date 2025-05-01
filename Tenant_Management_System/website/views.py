@@ -98,6 +98,8 @@ def lease():
 @views.route('/leasef', methods = ['GET', 'POST'])
 @login_required
 def leasef():
+
+    les =LeaseAgreement.query.filter_by(landlord_email = current_user.email).all()
     if request.method == 'POST':
         tenant_name = request.form.get("tenantName")
         tenant_email = request.form.get("tenantEmail")
@@ -125,7 +127,7 @@ def leasef():
         db.session.add(new_lease_agreement)
         db.session.commit()
 
-        return render_template("Lease.html", user = current_user)
+        return render_template("Lease.html", user = current_user, les = les)
 
 
     return render_template("leaseform.html", user = current_user)
