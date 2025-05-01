@@ -10,7 +10,15 @@ class User(db.Model, UserMixin):
     contactNumber = db.Column(db.String(11),  nullable=False)
     userType = db.Column(db.String(10))
 
+class Landlord(User):
+    __tablename__ = 'landlord'
 
+    LID = db.Column(db.Integer, primary_key = True)
+
+    def __init__(self, email, password, username, contactNumber, userType, gender=None):
+        # Call the parent class (User) constructor to initialize common fields
+        super().__init__(email=email, password=password, username=username, contactNumber=contactNumber, userType=userType, gender=gender)
+        
 
 class Verification(db.Model):
     nid_number = db.Column(db.String(20), primary_key=True, unique=True, nullable=False)  # NID as Primary Key
@@ -67,11 +75,14 @@ class Rent(db.Model):
     
     # Rent Information
     tenant_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Link to User (Tenant)
+    landlord_id = db.Column(db.Integer, db.ForeignKey('landlord.LID'), nullable=False)  # Link to User (Tenant)
     month = db.Column(db.String(20), nullable=False)
     year = db.Column(db.Integer, nullable=False)
     rent_status = db.Column(db.String(20), default='Due', nullable=False)
 
     tenant = db.relationship('User', backref=db.backref('rent', lazy=True))
+
+    landlord = db.relationship('Landlord', backref=db.backref('rent', lazy=True))
 
 
 
