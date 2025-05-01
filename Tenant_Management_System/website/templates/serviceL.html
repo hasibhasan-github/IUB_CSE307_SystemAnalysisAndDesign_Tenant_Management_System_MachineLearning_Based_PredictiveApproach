@@ -64,8 +64,10 @@ Property
       </div>
     
     
-    
-      <!-- {% for products in object_list %} -->
+
+        {% if prop %}
+
+      {% for products in object_list %}
       <div class="table-row">
         <div class="table-cell first-cell">
             <p></p>
@@ -81,7 +83,14 @@ Property
             <a href=""> Delete </a>
         </div> 
     </div>
-    <!-- {% endfor %}   -->
+    {% endfor %}  
+
+        {% else %}
+            
+        {% endif %} 
+
+    
+
 
 
 
