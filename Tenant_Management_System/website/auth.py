@@ -16,12 +16,7 @@ def login():
         password = request.form.get('password')
 
         # Check if the user exists in the database
-        user = Landlord.query.filter_by(email=email).first()
-        # if user.userType == "Landlord":
-        #     user = Landlord.query.filter_by(email=email).first()
-        #     print(user.LID)
-        # else:
-        #     user = User.query.filter_by(email=email).first()
+        user = User.query.filter_by(email=email).first()
 
         if user:
             if user.password == password :
@@ -85,6 +80,15 @@ def signup():
                     contactNumber=contactNumber,         # Replace with the user's contact number
                     userType=userType)                 # Replace with the user's type (e.g., "Tenant", "Admin"
                 db.session.add(new_user)
+                db.session.commit()
+                new_user1 = User(
+                    email=email,        # Replace with the user's email
+                    password=password,          # Replace with a hashed password
+                    username=username,              # Replace with the user's username
+                    gender=gender,                       # Replace with gender
+                    contactNumber=contactNumber,         # Replace with the user's contact number
+                    userType=userType)                 # Replace with the user's type (e.g., "Tenant", "Admin"
+                db.session.add(new_user1)
                 db.session.commit()
                 flash('Registration Successful', category='success')
                 # login_user(user, remember=True)
