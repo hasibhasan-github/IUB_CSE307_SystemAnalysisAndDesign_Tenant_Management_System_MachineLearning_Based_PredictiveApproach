@@ -27,8 +27,16 @@ Property
         <h3>Property Management</h3>
         <div class="info_data">
           <div class="data">
-             <h4>Total Available Property</h4>
-             <p>16</p>
+             <h4>Landlord Name</h4>
+             <strong>
+
+            {% if user %}
+              {{ user.username }}
+            {% else %}
+                0
+            {% endif %} 
+
+             </strong>
           </div>
           <div class="data">
             <h4>Add a new Property on Rent</h4>
