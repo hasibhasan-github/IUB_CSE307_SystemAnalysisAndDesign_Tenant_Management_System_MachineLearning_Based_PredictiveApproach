@@ -90,4 +90,9 @@ def pay():
 def pred():
     return render_template("pred.html", user = current_user)
 
+@views.route('/lease')
+@login_required
+def lease():
+    return render_template("leasedetails.html", user = current_user)
+
 # Profile Templates Route
