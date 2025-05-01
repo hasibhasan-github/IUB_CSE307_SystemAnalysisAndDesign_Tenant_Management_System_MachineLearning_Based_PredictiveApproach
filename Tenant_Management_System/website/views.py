@@ -173,7 +173,7 @@ def noti1():
 def serviceL():
     return render_template("serviceL.html", user = current_user)
 
-@views.route('/addprop')
+@views.route('/addprop', methods = ['GET', 'POST'])
 @login_required
 def addprop():
     return render_template("addprop.html", user = current_user)
