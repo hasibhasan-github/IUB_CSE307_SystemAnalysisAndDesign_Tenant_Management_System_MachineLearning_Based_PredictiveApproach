@@ -109,7 +109,7 @@ def leasef():
         security_deposit = request.form.get("securityDeposit") #monthlyRent
         lease_start_date = request.form.get("leaseStart")
         lease_end_date = request.form.get("leaseEnd") 
-        
+
         new_lease_agreement = LeaseAgreement(
         tenant_name=tenant_name,
         tenant_email=tenant_email,
@@ -121,6 +121,8 @@ def leasef():
         security_deposit=security_deposit,
         lease_start_date=lease_start_date,
         lease_end_date=lease_end_date,)
+
+        
     return render_template("leaseform.html", user = current_user)
 
 @views.route('/mainform')
