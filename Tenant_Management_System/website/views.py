@@ -176,4 +176,16 @@ def serviceL():
 @views.route('/addprop', methods = ['GET', 'POST'])
 @login_required
 def addprop():
+    if request.method == 'POST':
+        nid_number = request.form.get("NId")
+        name = request.form.get("name")
+        gender = request.form.get("gender")
+        email = request.form.get("email")
+        contact_number = request.form.get("contactNo")
+        dob = request.form.get("dob")
+        user_type = request.form.get("usertype")
+        address = request.form.get("add")
+        verification_status = "Pending"
+        user_id = request.form.get("id")
+
     return render_template("addprop.html", user = current_user)
