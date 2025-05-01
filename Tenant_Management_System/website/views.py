@@ -98,7 +98,7 @@ def lease():
 @views.route('/leasef', methods = ['GET', 'POST'])
 @login_required
 def leasef():
-
+    tmp = LeaseAgreement.query.filter_by(landlord_email = current_user.email).first()
     les =LeaseAgreement.query.filter_by(landlord_email = current_user.email).all()
     if request.method == 'POST':
         tenant_name = request.form.get("tenantName")
@@ -127,7 +127,7 @@ def leasef():
         db.session.add(new_lease_agreement)
         db.session.commit()
 
-        return render_template("Lease.html", user = current_user, les = les)
+        return render_template("Lease.html", user = current_user, les = les, tmp = tmp)
 
 
     return render_template("leaseform.html", user = current_user)
@@ -250,8 +250,8 @@ def addprop():
 @views.route('/Lease')
 @login_required
 def Lease():
-    # prop = Property.query.filter_by(bathrooms = current_user.id).first()
-    # prop1 = Property.query.filter_by(bathrooms = current_user.id).all()
+    les =LeaseAgreement.query.filter_by(landlord_email = current_user.email).all()
+    tmp = LeaseAgreement.query.filter_by(landlord_email = current_user.email).first()
 
-    return render_template("Lease.html", user = current_user)
+    return render_template("Lease.html", user = current_user, les = les, tmp = tmp)
     # return render_template("serviceL.html", user = current_user, prop = prop, prop1 = prop1)
