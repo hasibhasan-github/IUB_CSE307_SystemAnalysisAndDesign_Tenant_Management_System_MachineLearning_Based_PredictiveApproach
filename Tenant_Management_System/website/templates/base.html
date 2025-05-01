@@ -12,6 +12,12 @@
         <!-- Font Awesome Cdn Link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        {% block style %}
+
+        {% endblock %}
         
       </head>
       <body>
@@ -110,6 +116,10 @@
             {% block info1 %}
 
             {% endblock %}
+
+            {% block report1 %}
+
+            {% endblock %}
       
             <section class="main-course">
                 <!-- {% block contentButton %}
@@ -117,11 +127,9 @@
                 {% endblock %}
 
                 <br>
-                <br>
+                <br> -->
 
-                {% block contentDash %}
-  
-                {% endblock %} -->
+
               <!-- <div class="course-box">
                 <ul>
                   <li class="active">In progress</li>
@@ -153,5 +161,8 @@
             </section>
           </section>
         </div>
+        {% block contentJS %}
+  
+        {% endblock %}
       </body>
       </html></span>
