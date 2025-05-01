@@ -6,6 +6,10 @@ Report
 {% endblock %}
 
 
+{% block style %}
+
+{% endblock %}
+
 {% block Report %}
 
 <li><a href="report" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #87baed;">
@@ -17,54 +21,40 @@ Report
 
 
 {% block report1 %}
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h2 class="text-center">Monthly Usage Report</h2>
-      <p class="text-center">This report provides insights into the electricity, service, water, and total payment usage for the month.</p>
+
+<div class="wrapper">
+  <div class="right">
+    <div class="info">
+        <h3>Add Information</h3>
     </div>
+
+    
+    <div class="info_data">
+      <div class="data">
+      </br>
+      <label for="verify" class="form-label"><h4>Verification Status</h4></label>
+      <input type="text" class="form-control" id="verify" name="verify" 
+      value="{% if ver %}
+      {{ ver.verification_status }}
+    {% else %}
+        No verification record found
+    {% endif %}" 
+      readonly>
+    </div>
+    <div class="data">
+    </br>
+    <label for="id" class="form-label"><h4>User ID</h4></label>
+    <input type="text" class="form-control" id="id" name="id" value="{{ user.id }}" readonly>
+  </div>
+   </div>
+
+
+
+
+
+  </div>
   </div>
 
-  <!-- Electricity Bill Chart -->
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Electricity Bill Usage</h5>
-      <div class="chart-container">
-        <canvas id="electricityChart"></canvas>
-      </div>
-    </div>
-  </div>
-
-  <!-- Service Bill Chart -->
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Service Bill Usage</h5>
-      <div class="chart-container">
-        <canvas id="serviceChart"></canvas>
-      </div>
-    </div>
-  </div>
-
-  <!-- Total Payment Chart -->
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Total Payment Usage</h5>
-      <div class="chart-container">
-        <canvas id="totalPaymentChart"></canvas>
-      </div>
-    </div>
-  </div>
-
-  <!-- Water Bill Chart -->
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Water Bill Usage</h5>
-      <div class="chart-container">
-        <canvas id="waterChart"></canvas>
-      </div>
-    </div>
-  </div>
-</div>
 {% endblock %}
 
 
