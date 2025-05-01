@@ -122,7 +122,12 @@ def leasef():
         lease_start_date=lease_start_date,
         lease_end_date=lease_end_date,)
 
-        
+        db.session.add(new_lease_agreement)
+        db.session.commit()
+
+        return render_template("Lease.html", user = current_user)
+
+
     return render_template("leaseform.html", user = current_user)
 
 @views.route('/mainform')
