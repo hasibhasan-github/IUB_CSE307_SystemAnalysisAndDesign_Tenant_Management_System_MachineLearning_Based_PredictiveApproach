@@ -3,7 +3,7 @@ from . import db
 from flask_login import login_user, login_required, logout_user, current_user
 
 
-from .models import User
+from .models import User, Landlord
 
 auth = Blueprint('auth', __name__)
 
@@ -67,6 +67,18 @@ def signup():
             # Add User to Database
 
             if userType == "Landlord":
+                new_user = Landlord(
+                    email=email,        # Replace with the user's email
+                    password=password,          # Replace with a hashed password
+                    username=username,              # Replace with the user's username
+                    gender=gender,                       # Replace with gender
+                    contactNumber=contactNumber,         # Replace with the user's contact number
+                    userType=userType)                 # Replace with the user's type (e.g., "Tenant", "Admin"
+                db.session.add(new_user)
+                db.session.commit()
+                flash('Registration Successful', category='success')
+                # login_user(user, remember=True)
+                return redirect(url_for('views.home'))
                 pass
             else:
                 new_user = User(
