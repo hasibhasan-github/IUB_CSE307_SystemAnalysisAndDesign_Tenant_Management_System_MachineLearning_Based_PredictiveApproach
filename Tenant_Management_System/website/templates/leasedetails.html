@@ -69,6 +69,30 @@
             </div>
         </div> -->
 
+        {% if user %}
+
+            <div class="card">
+                <div class="card-header">Tenant Name Details</div>
+                <div class="card-body lease-details">
+                    <p><span>Tenant Name:</span>  {{ tmp.monthly_rent }}</p>
+                    <p><span>Security Deposit:</span> {{ tmp.security_deposit }} </p>
+                    <p><span>Lease Start Date:</span> {{ tmp.lease_start_date }} </p>
+                    <p><span>Lease End Date:</span> {{ tmp.lease_end_date }} </p>
+                </div>
+            </div>
+
+        {% else %}
+            <div class="card">
+                <div class="card-header">Tenant Name Details</div>
+                <div class="card-body lease-details">
+                    <p><span>Tenant Name:</span> No Data</p>
+                    <p><span>Security Deposit:</span> No Data</p>
+                    <p><span>Lease Start Date:</span> No Data</p>
+                    <p><span>Lease End Date:</span> No Data</p>
+                </div>
+            </div>
+        {% endif %} 
+
         {% if tmp %}
 
         <div class="card">
@@ -97,7 +121,7 @@
         {% if tmp %}
 
             <div class="card">
-                <div class="card-header">Landlord Details</div>
+                <div class="card-header">Lease Details</div>
                 <div class="card-body lease-details">
                     <p><span>Monthly Rent:</span>  {{ tmp.monthly_rent }}</p>
                     <p><span>Security Deposit:</span> {{ tmp.security_deposit }} </p>
