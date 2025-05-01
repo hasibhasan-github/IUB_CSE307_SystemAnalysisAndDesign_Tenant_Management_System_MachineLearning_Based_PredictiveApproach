@@ -34,7 +34,7 @@ Report
                 <div class="card" style="margin-bottom: 20px;">
                   <div class="card-body">
                     <h5 class="card-title">Electricity Bill Usage</h5>
-                    <div class="chart-container" style="position: relative; height: 200px; width: 100%;">
+                    <div class="chart-container" style="position: relative; height: 320px; width: 100%;">
                       <canvas id="electricityChart"></canvas>
                     </div>
                   </div>
@@ -46,7 +46,7 @@ Report
                 <div class="card" style="margin-bottom: 20px;">
                   <div class="card-body">
                     <h5 class="card-title">Service Bill Usage</h5>
-                    <div class="chart-container" style="position: relative; height: 200px; width: 100%;">
+                    <div class="chart-container" style="position: relative; height: 320px; width: 100%;">
                       <canvas id="serviceChart"></canvas>
                     </div>
                   </div>
@@ -54,32 +54,13 @@ Report
 
           </div>
         </div>
-        <div class="info_data">
-             <div class="data">
-                <h4>Gender</h4>
-                <p>Male</p>
-             </div>
-             <div class="data">
-              <h4>Subscription Type</h4>
-                <p>{{ user.userType }}</p>
-          </div>
-        </div>
-        <div class="info_data">
-             <div class="data">
-                <h4>Contact Number</h4>
-                <p>{{ user.contactNumber }}</p>
-             </div>
-             <div class="data">
-              <h4>User ID</h4>
-              <p>{{ user.id }}</p>
-          </div>
-        </div>
-    </div>
   
 
   </div>           
 </div>
-<input href ="" type="button" value="See More Report" class="button-30" role="button" readonly>
+<button type="submit" class="button-30" style="display: block; margin: 0 auto; text-align: center;">
+  <a href="report1"> See More Report </a>
+</button>
 </div>
 <!-- </section>
 
