@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Notifications
+{% endblock %}
+
+
+{% block noti %}
+
+<li><a href="noti" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #87baed;">
+    <i class="fas fa-bell"></i>
+    <span class="nav-item">Notifications</span>
+  </a></li>
+
+{% endblock %}
+
+{% block noti1 %}
+
+
+<div class="course-box">
+          
+    <div class="wrapper">
+    <div class="right">
+      <div class="info">
+          <h3>Notifications</h3>
+          <div class="info_data">
+  
+                        
+                            <!-- Electricity Bill Notification -->
+                            <div class="notification alert alert-info" style="background-color: #e0f7fa; border-left: 20px solid #00bcd4; width: 80%; height: 25%; text-align: center; padding-top: 20px;">
+                                <strong style="vertical-align: middle;" >Electricity Bill Usage:</strong> <span>120 kWh</span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        
+
+          </div>
+        </br>
+          <div class="info_data">
+  
+                        
+            <!-- Electricity Bill Notification -->
+            <div class="notification alert alert-warning" style="background-color: #fff3e0; border-left: 20px solid #ff9800;  width: 80%; height: 25%; text-align: center; padding-top: 20px;">
+                <strong>Service Bill Usage:</strong> <span>$45</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        
+
+        </div>
+        </br>
+        <div class="info_data">
+
+                    
+                <!-- Total Payment Notification -->
+                <div class="notification alert alert-success" style="background-color: #e8f5e9; border-left: 20px solid #4caf50; width: 80%; height: 25%; text-align: center; padding-top: 20px;">
+                    <strong>Total Payment Usage:</strong> <span>$150</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+    
+
+        </div>
+
+            </br>
+            <div class="info_data">
+
+                        
+                        <div class="notification alert alert-danger" style="background-color: #ffebee; border-left: 20px solid #f44336; width: 80%; height: 25%; text-align: center; padding-top: 20px;">
+                            <strong>Water Bill Usage:</strong> <span>1000 gallons</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
+
+            </div>
+
+
+    
+  
+    </div>           
+  </div>
+  </div>
+  <!-- </section>
+  
+  </section> -->
+  
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}
+
+

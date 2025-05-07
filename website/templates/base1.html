@@ -1,0 +1,176 @@
+<!-- <span style="font-family: verdana, geneva, sans-serif;"> -->
+
+    <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <title> {% block title %}
+
+                {% endblock %}
+        </title>
+        <link rel="stylesheet" href="style.css" />
+        <!-- Font Awesome Cdn Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base1.css') }}">
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        {% block style %}
+
+        {% endblock %}
+        
+      </head>
+      <body>
+        <div class="container">
+          <nav>
+            <ul>
+              <li><a href="#" class="logo">
+                <img src="{{ url_for('static', filename='L.jpg') }}" alt="">
+                <span class="nav-item">Landlord</span>
+              </a></li>
+              {% block Profile %}
+
+              <li><a href="Lprofile">
+                <i class="fas fa-user"></i>
+                <span class="nav-item">Profile</span>
+              </a></li>
+
+              {% endblock %}
+
+              {% block info %}
+
+              <li><a href="info1">
+                <i class="fas fa-info-circle"></i>
+                <span class="nav-item">Information</span>
+              </a></li>
+
+              {% endblock %}
+
+              {% block Report %}
+
+              <li><a href="Lreport">
+                <i class="fas fa-chart-line"></i>
+                <span class="nav-item">Report</span>
+              </a></li>
+
+              {% endblock %}
+
+              {% block noti %}
+
+              <li><a href="noti1">
+                <i class="fas fa-bell"></i>
+                <span class="nav-item">Updates</span>
+              </a></li>
+
+              {% endblock %}
+
+              {% block service %}
+
+              <li><a href="serviceL">
+                <i class="fas fa-tasks"></i>
+                <span class="nav-item">Property</span>
+              </a></li>
+
+              {% endblock %}
+              
+              {% block pay %}
+
+              <li><a href="Lease">
+                <i class="fas fa-wallet"></i>
+                <span class="nav-item">Lease Agreement</span>
+              </a></li>
+
+              {% endblock %}
+
+              <!-- <li><a href="">
+                <i class="fas fa-cog"></i>
+                <span class="nav-item"></span>
+              </a></li> -->
+
+              {% block pred %}
+
+              <li><a href="">
+                <i class="fas fa-question-circle"></i>
+                <span class="nav-item">Prediction</span>
+              </a></li>
+
+              {% endblock %}
+
+              <li><a href="logout" class="logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="nav-item">Log out</span>
+              </a></li>
+            </ul>
+          </nav>
+      
+          <section class="main">
+
+            {% block flash %}
+
+            {% endblock %}
+
+            {% block profile1 %}
+
+            {% endblock %}
+
+            {% block info1 %}
+
+            {% endblock %}
+
+            {% block report1 %}
+
+            {% endblock %}
+
+            {% block noti1 %}
+
+            {% endblock %}
+
+            {% block serv1 %}
+
+            {% endblock %}
+      
+            <section class="main-course">
+                <!-- {% block contentButton %}
+  
+                {% endblock %}
+
+                <br>
+                <br> -->
+
+
+              <!-- <div class="course-box">
+                <ul>
+                  <li class="active">In progress</li>
+                  <li>explore</li>
+                  <li>incoming</li>
+                  <li>finished</li>
+                </ul>
+                <div class="course">
+                  <div class="box">
+                    <h3>HTML</h3>
+                    <p>80% - progress</p>
+                    <button>continue</button>
+                    <i class="fab fa-html5 html"></i>
+                  </div>
+                  <div class="box">
+                    <h3>CSS</h3>
+                    <p>50% - progress</p>
+                    <button>continue</button>
+                    <i class="fab fa-css3-alt css"></i>
+                  </div>
+                  <div class="box">
+                    <h3>JavaScript</h3>
+                    <p>30% - progress</p>
+                    <button>continue</button>
+                    <i class="fab fa-js-square js"></i>
+                  </div>
+                </div>
+              </div> -->
+            </section>
+          </section>
+        </div>
+        {% block contentJS %}
+  
+        {% endblock %}
+      </body>
+      </html></span>

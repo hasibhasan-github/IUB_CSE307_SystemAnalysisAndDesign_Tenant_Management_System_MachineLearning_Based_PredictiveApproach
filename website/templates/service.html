@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Service
+{% endblock %}
+
+
+{% block service %}
+
+<li><a href="service" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #87baed;">
+    <i class="fas fa-tasks"></i>
+    <span class="nav-item">Service</span>
+  </a></li>
+
+{% endblock %}
+
+
+{% block serv1 %}
+
+
+<div class="course-box">
+          
+  <div class="wrapper">
+  <div class="right">
+    <div class="info">
+        <h3>Service Management</h3>
+        <div class="info_data">
+          <div class="data">
+             <h4>Total Available Property</h4>
+             <p>16</p>
+          </div>
+          <div class="data">
+            <h4>Search for Available Property on Rent</h4>
+            <button type="button" class="button-30" style="display: block; text-align: left; width: auto;">
+              <a href="explore" style="text-align: center;"><strong><h3>Search</h3></strong></a>
+          </button>
+       </div>
+     </div>
+
+  </br>
+
+    <div class="projects">
+      <h3>Lease Agreement</h3>
+      <div class="projects_data">
+           <div class="data">
+              <h4>Lease Agreement Status</h4>
+              <p> Expired </p>
+              <button type="button" class="button-30" style="display: block; text-align: left; width: auto;">
+                <a href="lease" style="text-align: center;"><strong><h3>Details</h3></strong></a>
+            </button>
+           </div>
+           <div class="data">
+             <h4>Apply for Lease Agreement</h4>
+           </br>
+           <p><strong>Your landllord can only Apply </br> for Lease Agreement</strong></p>
+             <!-- <button type="button" class="button-30" style="display: block; text-align: left; width: auto;">
+              <a href="leasef" style="text-align: center;"><strong><h3>Apply</h3></strong></a>
+          </button> -->
+        </div>
+      </div>
+
+    <div class="projects">
+      <h3>Request Service</h3>
+      <div class="projects_data">
+           <div class="data">
+              <h4>Previous Service Status</h4>
+              <p> Approved </p>
+           </div>
+           <div class="data">
+             <h4>Apply for Maintenance Service</h4>
+            <button type="button" class="button-30" style="display: block; text-align: left; width: auto;">
+             <a href="mainform" style="text-align: center;"><strong><h3>Apply</h3></strong></a>
+         </button>
+        </div>
+      </div>
+  </div>
+</div>           
+</div>
+
+
+{% endblock %}
+
