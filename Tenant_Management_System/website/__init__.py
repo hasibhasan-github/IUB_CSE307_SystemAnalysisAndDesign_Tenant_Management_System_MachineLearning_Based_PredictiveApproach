@@ -11,13 +11,26 @@ DB_NAME = "tenant_management"  # Update this to your MySQL database name
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'DHFGHJASDVFHGFHVCDCDJU153'
-    
-    # MySQL connection URI
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:123@localhost/' + DB_NAME
-    
+
+    # Azure MySQL connection URI
+    app.config['SQLALCHEMY_DATABASE_URI'] = (
+        'mysql+pymysql://ieswseaowf:{bc3Ro2a0in28t$gw}@tenantmanagementsystem-server.mysql.database.azure.com:3306/' + DB_NAME
+    )
+
+    # Enable SSL connection mode as required by Azure
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+        "connect_args": {
+            "ssl": {
+                "ca": "/path/to/your/ca-cert.pem"  # Optional: If you need to provide a certificate for SSL connection
+            }
+        }
+    }
+
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable modification tracking
 
     db.init_app(app)
+    
+    return app
 
 
     from .views import views
