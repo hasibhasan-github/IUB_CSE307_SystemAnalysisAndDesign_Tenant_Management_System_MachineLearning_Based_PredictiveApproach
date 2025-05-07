@@ -14,7 +14,7 @@ def create_app():
 
     # Azure MySQL connection URI
     app.config['SQLALCHEMY_DATABASE_URI'] = (
-        'mysql+pymysql://ieswseaowf:{bc3Ro2a0in28t$gw}@tenantmanagementsystem-server.mysql.database.azure.com:3306/' + DB_NAME
+        'mysql+pymysql://ieswseaowf:{nishi1412@}@hajji.mysql.database.azure.com:3306/' + DB_NAME
     )
 
     # Enable SSL connection mode as required by Azure
