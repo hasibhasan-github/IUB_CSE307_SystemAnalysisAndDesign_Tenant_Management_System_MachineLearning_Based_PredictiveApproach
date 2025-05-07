@@ -29,8 +29,6 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable modification tracking
 
     db.init_app(app)
-    
-    return app
 
 
     from .views import views
