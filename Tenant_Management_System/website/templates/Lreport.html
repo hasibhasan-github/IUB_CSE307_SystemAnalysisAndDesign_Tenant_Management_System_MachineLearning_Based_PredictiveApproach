@@ -1,0 +1,171 @@
+{% extends 'base1.html' %}
+
+
+{% block title %}
+Report
+{% endblock %}
+
+
+{% block style %}
+
+{% endblock %}
+
+{% block Report %}
+
+<li><a href="Lreport" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #87baed;">
+    <i class="fas fa-chart-line"></i>
+    <span class="nav-item">Report</span>
+  </a></li>
+
+{% endblock %}
+
+
+{% block report1 %}
+
+<div class="course-box">
+          
+  <div class="wrapper">
+  <div class="right">
+    <div class="info">
+        <h3>Monthly Usage Report</h3>
+        <div class="info_data">
+             <div class="data">
+
+                <div class="card" style="margin-bottom: 20px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Electricity Bill Usage</h5>
+                    <div class="chart-container" style="position: relative; height: 320px; width: 100%;">
+                      <canvas id="electricityChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+             </div>
+             <div class="data">
+
+                <div class="card" style="margin-bottom: 20px;">
+                  <div class="card-body">
+                    <h5 class="card-title">Service Bill Usage</h5>
+                    <div class="chart-container" style="position: relative; height: 320px; width: 100%;">
+                      <canvas id="serviceChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+          </div>
+        </div>
+  
+
+  </div>           
+</div>
+<button type="submit" class="button-30" style="display: block; margin: 0 auto; text-align: center;">
+  <a href="Lreport1"> See More Report </a>
+</button>
+</div>
+<!-- </section>
+
+</section> -->
+
+</div>
+
+{% endblock %}
+
+
+
+{% block contentJS %}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybA4I8kPCkRr/rE9/Qpg6aAZGf2tDgH4waT7/1T5FVzBOC0v3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0p5wmTFlQH+RauakvJ5pLgkmw9JEdJvYw6M2rWkvj2Tbll6i" crossorigin="anonymous"></script>
+
+<script>
+  // Electricity Bill Usage Chart
+  var ctx1 = document.getElementById('electricityChart').getContext('2d');
+  var electricityChart = new Chart(ctx1, {
+    type: 'line',
+    data: {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: [{
+        label: 'Electricity Bill Usage (kWh)',
+        data: [120, 150, 130, 170],
+        borderColor: 'rgba(255, 99, 132, 1)',
+        fill: false,
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  // Service Bill Usage Chart
+  var ctx2 = document.getElementById('serviceChart').getContext('2d');
+  var serviceChart = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: [{
+        label: 'Service Bill Usage ($)',
+        data: [50, 60, 45, 70],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  // Total Payment Usage Chart
+  var ctx3 = document.getElementById('totalPaymentChart').getContext('2d');
+  var totalPaymentChart = new Chart(ctx3, {
+    type: 'pie',
+    data: {
+      labels: ['Electricity', 'Service', 'Water'],
+      datasets: [{
+        data: [120, 70, 40],
+        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 159, 64, 1)'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true
+    }
+  });
+
+  // Water Bill Usage Chart
+  var ctx4 = document.getElementById('waterChart').getContext('2d');
+  var waterChart = new Chart(ctx4, {
+    type: 'radar',
+    data: {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: [{
+        label: 'Water Bill Usage (L)',
+        data: [300, 350, 320, 400],
+        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        r: {
+          min: 0,
+          max: 500
+        }
+      }
+    }
+  });
+</script>
+{% endblock %}
+

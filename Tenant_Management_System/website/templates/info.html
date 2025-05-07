@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Information
+{% endblock %}
+
+{% block flash %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %} 
+
+{% for category, message in messages %}
+{% if category == 'error' %}
+<div class="alert alert-danger alter-dismissable fade show" role = "alert">
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">
+            &times;
+        </span>
+    </button>
+</div>
+{% else %} 
+<div class="alert alert-success alter-dismissable fade show" role = "alert">
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">
+            &times;
+        </span>
+    </button>
+</div> 
+{% endif %}
+{% endfor %}
+
+{% endif %}
+{% endwith %}
+{% endblock %}
+
+{% block info %}
+
+<li><a href="info" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #87baed;">
+    <i class="fas fa-info-circle"></i>
+    <span class="nav-item">Information</span>
+  </a></li>
+
+{% endblock %}
+
+
+{% block info1 %}
+<div class="course-box">
+          
+  <div class="wrapper">
+  <div class="right">
+    <div class="info">
+        <h3>Add Information</h3>
+    <form method="POST" id="verificationForm">
+        <div class="info_data">
+             <div class="data">
+                <h4>NID Number</h4>
+                <input type="text" class="form-control" id="NId" name="NId" 
+                {% if ver %}
+                  placeholder= "NID Number: {{ ver.nid_number }}"
+                {% else %}
+                    placeholder= "Enter Your NID Number"
+                {% endif %} >
+             </div>
+             <div class="data">
+               <h4>Your Name</h4>
+               <input type="text" class="form-control" id="name" name="name" value="{{ user.username }}" readonly>
+          </div>
+        </div>
+        <div class="info_data">
+             <div class="data">
+             </br>
+                <h4>Gender</h4>
+                <select class="form-select" id="gender" name="gender" required>
+                  <option value="" selected disabled>Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+              </select>
+             </div>
+            </br>
+             <div class="data">
+            </br>
+            <label for="email" class="form-label"><h4>Email</h4></label>
+              <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" readonly>
+          </div>
+        </div>
+        <div class="info_data">
+             <div class="data">
+            </br>
+                <h4>Contact Number</h4>
+                <input type="tel" class="form-control" name="contactNo" id="contactNo" value = "{{ user.contactNumber }}" readonly >
+             </div>
+             <div class="data">
+            </br>
+              <h4>Date of Birth</h4>
+              <input type="date" class="form-control" id="dob" name="dob" required>
+          </div>
+        </div>
+        <div class="info_data">
+          <div class="data">
+          </br>
+             <h4>User Type</h4>
+             <select class="form-select" id="usertype" name="usertype" required>
+               <option value="" selected disabled>Select User Type</option>
+               <option value="Tenant">Tenant</option>
+               <option value="Landlord">Landlord</option>
+           </select>
+          </div>
+         </br>
+          <div class="data">
+         </br>
+         <label for="add" class="form-label"><h4>Address</h4></label>
+           <input type="text" class="form-control" id="add" name="add" 
+           {% if ver %}
+              placeholder= " {{ ver.address }}"
+            {% else %}
+              placeholder= "Enter Your Addressr"
+          {% endif %} >
+       </div>
+
+
+     </div>
+
+     <div class="info_data">
+      <div class="data">
+      </br>
+      <label for="verify" class="form-label"><h4>Verification Status</h4></label>
+      <input type="text" class="form-control" id="verify" name="verify" 
+      value="{% if ver %}
+      {{ ver.verification_status }}
+    {% else %}
+        No verification record found
+    {% endif %}" 
+      readonly>
+    </div>
+    <div class="data">
+    </br>
+    <label for="id" class="form-label"><h4>User ID</h4></label>
+    <input type="text" class="form-control" id="id" name="id" value="{{ user.id }}" readonly>
+  </div>
+   </div>
+     
+    </div>
+
+    
+    
+    <div class="info_data">
+      <div class="data">
+     </br>
+     <button type="submit" class="button-30" style="display: block; margin: 0 auto; text-align: center;">
+      Verify <br> Information
+  </button>
+      </div>
+      <div class="data">
+     </br>
+       <!-- <h4>Date of Birth</h4>
+       <input type="date" class="form-control" id="dob" required> -->
+   </div>
+ </div>
+    
+    <!-- <input type="submit" value="Submit" class="button-30" role="button"> -->
+    
+
+  </form>
+  <script>
+    function submitForm() {
+        document.getElementById("verificationForm").submit();
+    }
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
+

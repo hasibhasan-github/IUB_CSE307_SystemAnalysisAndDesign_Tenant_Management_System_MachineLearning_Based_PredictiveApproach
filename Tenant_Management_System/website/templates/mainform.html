@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Request Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin-top: 60px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .btn-back {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        .btn-back:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-btn">
+        <button class="btn btn-back">Back</button>
+    </a>
+
+    <div class="container">
+        <h2 class="mb-4">Maintenance Request Form</h2>
+
+        <!-- Maintenance Request Form -->
+        <form>
+            <!-- Tenant Information -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <strong>Tenant Information</strong>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="tenantName">Tenant Name</label>
+                        <input type="text" class="form-control" id="tenantName" placeholder="Enter Tenant's Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tenantEmail">Tenant Email</label>
+                        <input type="email" class="form-control" id="tenantEmail" placeholder="Enter Tenant's Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tenantPhone">Tenant Phone Number</label>
+                        <input type="tel" class="form-control" id="tenantPhone" placeholder="Enter Tenant's Phone Number" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maintenance Service Details -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <strong>Maintenance Service Details</strong>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="issueType">Issue Type</label>
+                        <input type="text" class="form-control" id="issueType" placeholder="Describe the issue" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg w-100">Submit Maintenance Request</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
