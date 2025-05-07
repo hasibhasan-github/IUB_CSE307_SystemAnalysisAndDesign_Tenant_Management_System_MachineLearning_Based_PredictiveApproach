@@ -6,7 +6,7 @@ from flask_login import LoginManager
 
 db = SQLAlchemy()
 
-DB_NAME = "tenant_management"  # Update this to your MySQL database name
+DB_NAME = "tenantmanagementsystem-server"  # Update this to your MySQL database name
 
 def create_app():
     app = Flask(__name__)
