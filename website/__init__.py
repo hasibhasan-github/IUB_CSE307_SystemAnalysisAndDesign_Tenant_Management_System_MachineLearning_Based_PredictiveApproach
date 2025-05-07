@@ -17,15 +17,6 @@ def create_app():
         'mysql+pymysql://ieswseaowf:{nishi1412@}@hajji.mysql.database.azure.com:3306/' + DB_NAME
     )
 
-    # Enable SSL connection mode as required by Azure
-    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
-        "connect_args": {
-            "ssl": {
-                "ca": "/path/to/your/ca-cert.pem"  # Optional: If you need to provide a certificate for SSL connection
-            }
-        }
-    }
-
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable modification tracking
 
     db.init_app(app)
