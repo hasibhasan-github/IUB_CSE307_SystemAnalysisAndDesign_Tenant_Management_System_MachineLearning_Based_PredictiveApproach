@@ -14,7 +14,7 @@ def create_app():
 
     # Azure MySQL connection URI
     app.config['SQLALCHEMY_DATABASE_URI'] = (
-        'mysql+pymysql://hasib:{nishi1412@}@hajji.mysql.database.azure.com:3306/' + DB_NAME
+        'mysql+pymysql://hasib:nishi1412@@hajji.mysql.database.azure.com:3306/tenant_management' + DB_NAME
     )
 
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable modification tracking
