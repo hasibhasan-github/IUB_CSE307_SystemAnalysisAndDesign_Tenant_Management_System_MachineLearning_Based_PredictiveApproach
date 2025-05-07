@@ -1,0 +1,80 @@
+{% extends 'base1.html' %}
+
+
+{% block title %}
+Notifications
+{% endblock %}
+
+
+{% block noti %}
+
+<li><a href="noti1" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #87baed;">
+    <i class="fas fa-bell"></i>
+    <span class="nav-item">Updates</span>
+  </a></li>
+
+{% endblock %}
+
+{% block noti1 %}
+
+
+<div class="course-box">
+          
+    <div class="wrapper">
+    <div class="right">
+      <div class="info">
+          <h3>Updates</h3>
+          
+
+          <div class="table-box">
+            <div class="table-row table-head">
+                <div class="table-cell first-cell">
+                    <p>Property</p>
+                </div>
+                <div class="table-cell">
+                    <p>Month</p>
+                </div>
+                <div class="table-cell ">
+                    <p>Rent</p>
+                </div> 
+                <div class="table-cell last-cell">
+                    <p>Tenant</p>
+                </div> 
+            </div>
+          
+          
+          
+            <!-- {% for products in object_list %} -->
+            <div class="table-row">
+              <div class="table-cell first-cell">
+                  <p></p>
+              </div>
+              <div class="table-cell">
+                  <p></p>
+              </div>
+              <div class="table-cell ">
+                  <a href=""> Update </a>
+                  <!-- <p>Update Details </p> -->
+              </div> 
+              <div class="table-cell last-cell">
+                  <a href=""> Delete </a>
+              </div> 
+          </div>
+          <!-- {% endfor %}   -->
+
+    
+  
+    </div>           
+  </div>
+  </div>
+  <!-- </section>
+  
+  </section> -->
+  
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}
+
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lease Agreement Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin-top: 60px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .btn-back {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        .btn-back:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-btn">
+        <button class="btn btn-back">Back</button>
+    </a>
+
+    <div class="container">
+        <h2 class="mb-4">Lease Agreement Form</h2>
+
+        <!-- Tenant Details -->
+        <form  method="POST">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <strong>Tenant Details</strong>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="tenantName">Tenant Name</label>
+                        <input type="text" class="form-control" name="tenantName" id="tenantName" placeholder="Enter Tenant's Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tenantEmail">Tenant Email</label>
+                        <input type="email" class="form-control" name="tenantEmail" id="tenantEmail" placeholder="Enter Tenant's Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tenantPhone">Tenant Phone Number</label>
+                        <input type="tel" class="form-control" name="tenantPhone" id="tenantPhone" placeholder="Enter Tenant's Phone Number" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Landlord Details -->
+            <!-- <div class="card mb-4">
+                <div class="card-header">
+                    <strong>Landlord Details</strong>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="landlordName">Landlord Name</label>
+                        <input type="text" class="form-control" id="landlordName" placeholder="Enter Landlord's Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="landlordEmail">Landlord Email</label>
+                        <input type="email" class="form-control" id="landlordEmail" placeholder="Enter Landlord's Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="landlordPhone">Landlord Phone Number</label>
+                        <input type="tel" class="form-control" id="landlordPhone" placeholder="Enter Landlord's Phone Number" required>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Lease Details -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <strong>Lease Details</strong>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="monthlyRent">Monthly Rent ($)</label>
+                        <input type="number" class="form-control" name="monthlyRent" id="monthlyRent" placeholder="Enter Monthly Rent" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="securityDeposit">Security Deposit (BDT)</label>
+                        <input type="number" class="form-control" name="securityDeposit" id="securityDeposit" placeholder="Enter Security Deposit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaseStart">Lease Start Date</label>
+                        <input type="date" class="form-control" name="leaseStart" id="leaseStart" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaseEnd">Lease End Date</label>
+                        <input type="date" class="form-control" name="leaseEnd" id="leaseEnd" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg w-100">Submit Lease Agreement</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

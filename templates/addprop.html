@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Information Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin-top: 60px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .btn-back {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        .btn-back:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-btn">
+        <button class="btn btn-back">Back</button>
+    </a>
+
+    <div class="container">
+        <h2 class="mb-4">Property Information Form</h2>
+
+        <!-- Property Information Form -->
+        <form method="POST">
+            <!-- Property Information Section -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <strong>Property Information</strong>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="propertyName">Property Name</label>
+                        <input type="text" class="form-control" id="propertyName" name="propertyName" placeholder="Enter Property Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="propertyDescription">Property Description</label>
+                        <textarea class="form-control" name="propertyDescription" id="propertyDescription" rows="4" placeholder="Enter Property Description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="propertyLocation">Property Location</label>
+                        <input type="text" class="form-control" id="propertyLocation" name="propertyLocation" placeholder="Enter Property Location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="propertyRent">Property Rent ($)</label>
+                        <input type="number" class="form-control" name="propertyRent" id="propertyRent" placeholder="Enter Property Rent" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="propertyType">Property Type</label>
+                        <input type="text" class="form-control" name="propertyType" id="propertyType" placeholder="Enter Property Type" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bedrooms">Number of Bedrooms</label>
+                        <input type="number" class="form-control" name="bedrooms" id="bedrooms" placeholder="Enter Number of Bedrooms" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bathrooms">Number of Bathrooms</label>
+                        <input type="number" class="form-control" name="bathrooms" id="bathrooms" placeholder="Enter Number of Bathrooms" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="propertySize">Property Size (sq. ft.)</label>
+                        <input type="number" class="form-control" name="propertySize" id="propertySize" placeholder="Enter Property Size" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property Availability and Lease Terms Section -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <strong>Property Availability and Lease Terms</strong>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="availableFrom">Available From</label>
+                        <input type="date" class="form-control" name="availableFrom" id="availableFrom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaseTerms">Lease Terms</label>
+                        <textarea class="form-control" name="leaseTerms" id="leaseTerms" rows="4" placeholder="Enter Lease Terms" required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg w-100">Submit Property Information</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

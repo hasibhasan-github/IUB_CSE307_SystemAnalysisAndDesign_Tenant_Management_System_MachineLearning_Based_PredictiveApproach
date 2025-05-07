@@ -1,0 +1,106 @@
+{% extends 'base1.html' %}
+
+
+{% block title %}
+Lease Agreement
+{% endblock %}
+
+{% block pay %}
+
+<!-- <li><a href="serviceL" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #87baed;">
+    <i class="fas fa-tasks"></i>
+    <span class="nav-item">Property</span>
+  </a></li> -->
+
+  <li><a href="Lease" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); background-color: #87baed;">
+    <i class="fas fa-wallet"></i>
+    <span class="nav-item">Lease Agreement</span>
+  </a></li>
+
+{% endblock %}
+
+
+{% block serv1 %}
+
+
+<div class="course-box">
+          
+  <div class="wrapper">
+  <div class="right">
+    <div class="info">
+        <h3>Lease Agreement Management</h3>
+        <div class="info_data">
+          <div class="data">
+             <h4>Landlord Name</h4>
+             <strong>
+
+            {% if user %}
+              {{ user.username }}
+            {% else %}
+                0
+            {% endif %} 
+
+             </strong>
+          </div>
+          <div class="data">
+            <h4>Add a Lease Agreement</h4>
+            <button type="button" class="button-30" style="display: block; text-align: left; width: auto;">
+              <a href="leasef" style="text-align: center;"><strong><h3>ADD</h3></strong></a>
+          </button>
+       </div>
+     </div>
+
+
+     <div class="table-box">
+      <div class="table-row table-head">
+          <div class="table-cell first-cell">
+              <p>Tenant Name</p>
+          </div>
+          <div class="table-cell">
+              <p>Monthly Rent</p>
+          </div>
+          <div class="table-cell ">
+              <p>Lease Start</p>
+          </div> 
+          <div class="table-cell last-cell">
+              <p>Lease End</p>
+          </div> 
+      </div>
+    
+    
+
+      {% if tmp %}
+
+          {% for data in les %}
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>{{ data.tenant_name }}</p>
+            </div>
+            <div class="table-cell">
+                <p> {{ data.monthly_rent }}</p>
+            </div>
+            <div class="table-cell ">
+              <p> {{ data.lease_start_date }}</p>
+            </div> 
+            <div class="table-cell last-cell">
+              <p> {{ data.lease_end_date }}</p>
+            </div> 
+        </div>
+        {% endfor %}  
+
+      {% else %}
+            
+      {% endif %} 
+
+    
+
+
+
+
+  </div>
+</div>           
+</div>
+
+
+{% endblock %}
+
